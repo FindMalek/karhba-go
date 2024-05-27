@@ -9,7 +9,7 @@ import { LogEvents } from "@/config/events"
 import { siteConfig } from "@/config/site"
 import { toast } from "@/hooks/use-toast"
 
-import { Icons } from "@/components/ui/icons"
+import { Icons } from "@/components/shared/icons"
 
 import { subscribeAction } from "@/actions/subscribe"
 

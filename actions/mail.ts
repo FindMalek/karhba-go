@@ -1,6 +1,5 @@
 "use server"
 
-import React from "react"
 import { render } from "@react-email/render"
 import nodemailer from "nodemailer"
 
@@ -15,9 +14,9 @@ import {
 
 import { siteConfig } from "@/config/site"
 
-import { EmailMagicLink } from "@/components/shared/email-magic-link"
-import { EmailNewUser } from "@/components/shared/email-new-user"
-import { EmailWhitelist } from "@/components/shared/email-whitelist"
+import { EmailMagicLink } from "@/components/app/email-magic-link"
+import { EmailNewUser } from "@/components/app/email-new-user"
+import { EmailWhitelist } from "@/components/app/email-whitelist"
 
 export async function sendMail(
   type: MailType,

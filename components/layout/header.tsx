@@ -7,7 +7,7 @@ import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 
 import { GlowingStarsBackgroundCard } from "@/components/ui/glowing-stars"
-import { Icons } from "@/components/ui/icons"
+import { Icons } from "@/components/shared/icons"
 import {
   NavigationMenu,
   NavigationMenuContent,
