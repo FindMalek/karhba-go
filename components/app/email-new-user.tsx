@@ -26,7 +26,7 @@ export function EmailNewUser({ username }: { username: string }) {
       <Body style={main}>
         <Container style={container}>
           <Img
-            src={`${siteConfig.url}/logos/LogoIcon.png`}
+            src={siteConfig.images.logo}
             width="170"
             height="50"
             alt={`${siteConfig.name} logo`}
@@ -53,9 +53,11 @@ export function EmailNewUser({ username }: { username: string }) {
               contact us
             </Link>
           </Text>
-
+          {/*
+           * TODO: Generate mail/hero-new-user.png
+           */}
           <Img
-            src={`${siteConfig.url}/mail/hero.png`}
+            src={`${siteConfig.url}/mail/hero-new-user.png`}
             width={600}
             height={400}
             alt={`${siteConfig.name}`}

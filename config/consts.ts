@@ -1,7 +1,29 @@
+import type { Email } from "@/types/mail"
 import type { Status } from "@/types"
 
-export const locales = ["en", "de", "fr", "ar", "tn"] as const
+export const locales = ["en"] as const
 export const localePrefix = "as-needed"
+
+export const emails = [
+  {
+    path: "email-preview/email-magic-link",
+    name: "Magic Link",
+    author: "findmalek",
+    url: "https://emails.findmalek.com/preview/findplate/magic-link",
+  },
+  {
+    path: "email-preview/email-whitelist",
+    name: "Whitelist",
+    author: "findmalek",
+    url: "https://emails.findmalek.com/preview/findplate/whitelist",
+  },
+  {
+    path: "email-preview/email-new-user",
+    name: "New User",
+    author: "findmalek",
+    url: "https://emails.findmalek.com/preview/findplate/new-user",
+  },
+] satisfies Email[]
 
 export const getNotFoundStatus = (t: (key: string) => string): Status[] => [
   {

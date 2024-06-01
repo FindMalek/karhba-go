@@ -3,7 +3,7 @@
 <p align="center">
 	<h1 align="center"><b>FindPlate</b></h1>
 <p align="center">
-    Run your food orders smarter 🪄
+    Speeds up project setup and development ⏩
     <br />
     <br />
  <!--    <a href="https://go.findmalek.com/anPiuRx">Discord</a>

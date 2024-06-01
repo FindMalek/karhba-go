@@ -25,14 +25,17 @@ export function EmailWhitelist() {
         <Container style={container}>
           <Section style={box}>
             <Img
-              src={`${siteConfig.url}/logos/LogoIcon.png`}
+              src={siteConfig.images.logo}
               width="50"
               height="50"
               alt={`${siteConfig.name} logo`}
             />
             <Hr style={hr} />
+            {/*
+             * TODO: Generate mail/hero-whitelist.png
+             */}
             <Img
-              src={`${siteConfig.url}/mail/hero.png`}
+              src={`${siteConfig.url}/mail/hero-whitelist.png`}
               width="600"
               height="300"
               alt={`${siteConfig.name}`}

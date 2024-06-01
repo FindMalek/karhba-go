@@ -21,3 +21,10 @@ export type NewUserData = {
   email: string
   username: string
 }
+
+export type Email = {
+  path: string
+  name: string
+  author: string
+  url: string
+}

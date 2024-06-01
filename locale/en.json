@@ -12,6 +12,18 @@
         "title": "Lost?",
         "description": "The page you're looking for doesn't exist.",
         "data-failed": "Data failed..."
+      },
+      "email": {
+        "title": "Email",
+        "description": "Open source email templates for your next project.",
+        "lead": {
+          "p-1": "Open source templates built with React Email.",
+          "p-2": "Recreate an",
+          "p-3": "existing email",
+          "p-4": "or submit a",
+          "p-5": "pull request",
+          "p-6": "to contribute your own designs."
+        }
       }
     },
     "components": {

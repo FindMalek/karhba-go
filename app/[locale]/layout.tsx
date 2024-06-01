@@ -13,7 +13,6 @@ import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 
 import { Analytics } from "@/components/layout/analytics"
-import { Header } from "@/components/layout/header"
 import { LayoutWrapper } from "@/components/layout/layout-wrapper"
 import { TailwindIndicator } from "@/components/layout/tailwind-indicator"
 import { Toaster } from "@/components/ui/toaster"
@@ -76,15 +75,13 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     siteName: siteConfig.name,
-    images: [
-      { url: `${siteConfig.url}/opengraph/og.png`, alt: siteConfig.name },
-    ],
+    images: [{ url: siteConfig.images.default, alt: siteConfig.name }],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
-    images: [`${siteConfig.url}/opengraph/og.png`],
+    images: [siteConfig.images.default],
     creator: "@findmalek",
   },
   icons: {
@@ -122,7 +119,6 @@ export default function RootLayout({
         )}
       >
         <LayoutWrapper locale={locale}>
-          <Header />
           {children}
           <Analytics />
           <Toaster />

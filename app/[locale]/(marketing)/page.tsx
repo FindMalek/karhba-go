@@ -1,4 +1,3 @@
-import { useTranslations } from "next-intl"
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server"
 
 import { siteConfig } from "@/config/site"
@@ -32,13 +31,13 @@ export async function generateMetadata() {
   }
 }
 
-export default function Home({
+export default async function Home({
   params: { locale },
 }: {
   params: { locale: string }
 }) {
   unstable_setRequestLocale(locale)
-  const t = useTranslations("app.pages.home")
+  const t = await getTranslations("app.pages.home")
 
   return (
     <div className="relative flex h-screen w-full flex-col items-center justify-center bg-neutral-950 antialiased">

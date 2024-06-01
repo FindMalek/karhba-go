@@ -2,10 +2,13 @@ import { SiteConfig } from "types"
 
 export const siteConfig: SiteConfig = {
   name: "FindPlate",
-  description:
-    "FindPlate is a food ordering platform that allows you to order food from your favorite restaurants and have it delivered to your doorstep.",
+  description: "Suitable for any kind of web development project.",
   url: "https://plate.findmalek.com",
-  ogImage: "https://plate.findmalek.com/og.png",
+  images: {
+    default: "https://plate.findmalek.com/og.png",
+    notFound: "https://plate.findmalek.com/not-found.png",
+    logo: "https://emojicdn.elk.sh/⏩?style=twitter",
+  },
   links: {
     twitter: "https://twitter.com/foundmalek",
     github: "https://github.com/findmalek/findplate",
@@ -21,7 +24,7 @@ export const notFoundMetadata = (t: (key: string) => string) => {
       description: t("description"),
       images: [
         {
-          url: `${siteConfig.url}/opengraph/not-found.png`,
+          url: siteConfig.images.notFound,
           alt: siteConfig.name,
         },
       ],
@@ -30,7 +33,7 @@ export const notFoundMetadata = (t: (key: string) => string) => {
       card: "summary_large_image",
       title: `${siteConfig.name} | ${t("title")}`,
       description: siteConfig.description,
-      images: [`${siteConfig.url}/opengraph/not-found.png`],
+      images: [siteConfig.images.notFound],
       creator: "@findmalek",
     },
   }

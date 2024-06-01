@@ -28,7 +28,7 @@ export function EmailMagicLink({ magicLink }: { magicLink: MagicLinkData }) {
       <Body style={main}>
         <Container style={container}>
           <Img
-            src={`${siteConfig.url}/logos/LogoIcon.png`}
+            src={siteConfig.images.logo}
             height="42"
             alt={`${siteConfig.name} logo`}
             style={logo}
