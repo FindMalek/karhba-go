@@ -1,7 +1,7 @@
 import type { Email } from "@/types/mail"
 import type { Status } from "@/types"
 
-export const locales = ["en"] as const
+export const locales = ["en", "fr"] as const
 export const localePrefix = "as-needed"
 
 export const emails = [

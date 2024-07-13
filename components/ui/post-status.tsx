@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils"
 
+// TODO: Move to shared and improve it
 export function PostStatus({ status }) {
   return (
     <div

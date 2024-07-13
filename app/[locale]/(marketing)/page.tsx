@@ -9,7 +9,7 @@ export async function generateMetadata() {
   const t = await getTranslations("app.pages.home")
 
   return {
-    title: `${siteConfig.name} | ${t("title")}`,
+    title: t("title"),
     description: t("description"),
     openGraph: {
       title: `${siteConfig.name} | ${t("title")}`,

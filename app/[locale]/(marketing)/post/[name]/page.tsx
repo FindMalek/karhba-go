@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 import { notFound } from "next/navigation"
-import { allAbouts } from "contentlayer/generated"
+import { allPosts } from "contentlayer/generated"
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server"
 
 import { notFoundMetadata, siteConfig } from "@/config/site"
@@ -15,9 +15,9 @@ export async function generateStaticParams({
 }: {
   params: { locale: string }
 }) {
-  const postSlugs = allAbouts
+  const postSlugs = allPosts
     .filter((post) => post.lang === params.locale)
-    .map((about) => about.slugAsParams.replace("about/", ""))
+    .map((about) => about.slugAsParams.replace("post/", ""))
 
   return postSlugs.map((slug) => ({ name: slug, locale: params.locale }))
 }
@@ -26,9 +26,9 @@ export async function generateMetadata({
   params,
 }): Promise<Metadata | undefined> {
   const translatedApp = await getTranslations("app")
-  const post = allAbouts.find(
+  const post = allPosts.find(
     (about) =>
-      about.slugAsParams === `about/${params.name}` &&
+      about.slugAsParams === `post/${params.name}` &&
       about.lang === translatedApp("language")
   )
 
@@ -53,10 +53,10 @@ export async function generateMetadata({
       description,
       type: "article",
       publishedTime,
-      url: `${siteConfig.url}/blog/${post.slug}`,
+      url: `${siteConfig.url}/post/${post.slug}`,
       images: [
         {
-          url: image || `${siteConfig.url}/opengraph/notweb.png`,
+          url: image || siteConfig.images.default,
         },
       ],
     },
@@ -64,7 +64,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title,
       description,
-      images: [image || `${siteConfig.url}/opengraph/notweb.png`],
+      images: [image || siteConfig.images.default],
     },
   }
 }
@@ -77,9 +77,9 @@ export default async function Page({
   unstable_setRequestLocale(locale)
   const translatedApp = await getTranslations("app")
 
-  const post = allAbouts.find(
+  const post = allPosts.find(
     (about) =>
-      about.slugAsParams === `about/${name}` &&
+      about.slugAsParams === `post / ${ name }` &&
       about.lang === translatedApp("language")
   )
 
@@ -100,8 +100,8 @@ export default async function Page({
             datePublished: post.publishedAt,
             dateModified: post.publishedAt,
             description: post.summary,
-            image: `${siteConfig.url}${post.image}`,
-            url: `${siteConfig.url}/updates/${post.slug}`,
+            image: `${ siteConfig.url }${ post.image }`,
+            url: `${ siteConfig.url }/updates/${ post.slug }`,
           }),
         }}
       />

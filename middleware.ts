@@ -7,10 +7,11 @@ export default createMiddleware({
   defaultLocale: "en",
 })
 
+// TODO: Always add the new locales in the matcher & config
 export const config = {
   matcher: [
     "/",
-    "/(fr|en|ar|tn|de)/:path*",
+    `/(fr|en|ar|tn|de|it)/:path*`,
     "/((?!api|_next|_vercel|.*\\..*).*)",
   ],
 }
