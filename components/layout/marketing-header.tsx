@@ -7,7 +7,7 @@ import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 
 import { Icons } from "@/components/shared/icons"
-import { GlowingStarsBackgroundCard } from "@/components/ui/glowing-stars"
+import { GlowingStarsBackgroundCard } from "@/components/fancy/glowing-stars"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -127,7 +127,7 @@ const itemVariant = {
   show: { opacity: 1 },
 }
 
-export function Header() {
+export function MarketingHeader() {
   const pathname = usePathname()
   const [isOpen, setOpen] = useState(false)
 

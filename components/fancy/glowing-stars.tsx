@@ -1,5 +1,3 @@
-// Thank you: https://ui.aceternity.com/components/glowing-stars-effect
-
 "use client"
 
 import { useEffect, useRef, useState, type ReactNode } from "react"

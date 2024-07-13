@@ -21,7 +21,7 @@ export async function generateMetadata() {
       description: t("description"),
       images: [
         {
-          url: `${siteConfig.url}/opengraph/emails.png`,
+          url: siteConfig.images.default,
           alt: siteConfig.name,
         },
       ],
@@ -30,7 +30,7 @@ export async function generateMetadata() {
       card: "summary_large_image",
       title: `${siteConfig.name} | ${t("title")}`,
       description: siteConfig.description,
-      images: [`${siteConfig.url}/opengraph/emails.png`],
+      images: [siteConfig.images.default],
       creator: "@findmalek",
     },
   }

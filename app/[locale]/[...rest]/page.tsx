@@ -3,7 +3,6 @@ import { getTranslations } from "next-intl/server"
 
 import { notFoundMetadata } from "@/config/site"
 
-export const runtime = "edge"
 
 export async function generateMetadata() {
   const t = await getTranslations("app.pages.not-found")

@@ -6,9 +6,9 @@ import { getTranslations, unstable_setRequestLocale } from "next-intl/server"
 
 import { notFoundMetadata, siteConfig } from "@/config/site"
 
-import { BlurryCircle } from "@/components/ui/blurry-circle"
-import { RenderMarkdown } from "@/components/ui/markdown"
-import { PostStatus } from "@/components/ui/post-status"
+import { RenderMarkdown } from "@/components/layout/markdown"
+import { BlurryCircle } from "@/components/fancy/blurry-circle"
+import { PostStatus } from "@/components/shared/post-status"
 
 export async function generateStaticParams({
   params,
@@ -79,7 +79,7 @@ export default async function Page({
 
   const post = allPosts.find(
     (about) =>
-      about.slugAsParams === `post / ${ name }` &&
+      about.slugAsParams === `post / ${name}` &&
       about.lang === translatedApp("language")
   )
 
@@ -100,8 +100,8 @@ export default async function Page({
             datePublished: post.publishedAt,
             dateModified: post.publishedAt,
             description: post.summary,
-            image: `${ siteConfig.url }${ post.image }`,
-            url: `${ siteConfig.url }/updates/${ post.slug }`,
+            image: `${siteConfig.url}${post.image}`,
+            url: `${siteConfig.url}/updates/${post.slug}`,
           }),
         }}
       />

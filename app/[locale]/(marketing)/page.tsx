@@ -3,7 +3,7 @@ import { getTranslations, unstable_setRequestLocale } from "next-intl/server"
 import { siteConfig } from "@/config/site"
 
 import { MarketingWaitlistForm } from "@/components/app/marketing-waitlist-form"
-import { BackgroundBeams } from "@/components/ui/background-beams"
+import { BackgroundBeams } from "@/components/fancy/background-beams"
 
 export async function generateMetadata() {
   const t = await getTranslations("app.pages.home")
