@@ -95,7 +95,7 @@ export function MainNav() {
           <NavigationMenuLink>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-foreground/60 hover:text-foreground/80 mx-0 p-0 font-light transition-colors hover:bg-transparent data-[active]:bg-transparent data-[state=open]:bg-transparent">
+                <NavigationMenuTrigger className="text-foreground/60 hover:text-foreground/80 mx-0 bg-transparent p-0 font-normal transition-colors hover:bg-transparent data-[active]:bg-transparent data-[state=open]:bg-transparent">
                   Developers
                 </NavigationMenuTrigger>
                 <NavigationMenuContent className="bg-[#FDFDFC] dark:bg-[#121212]">

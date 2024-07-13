@@ -1,6 +1,7 @@
 import { Link } from "@navigation"
 import { getTranslations } from "next-intl/server"
 
+import { Blur } from "@/components/fancy/blur"
 import { NumberTicker } from "@/components/fancy/number-ticker"
 import { RetroGrid } from "@/components/fancy/retro-grid"
 import { Icons } from "@/components/shared/icons"
@@ -18,15 +19,14 @@ export async function MarketingHero() {
         <div className="mx-auto text-center lg:w-[70%]">
           <Link href="/post/v-0-1-0">
             <BadgeShine>
-              🎉 {" "} {t("badge-tagline")}
+              🎉 {t("badge-tagline")}
               <Icons.chevronRight className="size-4 pl-1" />
             </BadgeShine>
           </Link>
 
           <h1 className="pt-4 text-5xl font-extrabold text-zinc-900 md:text-6xl xl:text-7xl dark:text-white">
             <span className="gradient-text inline-block">
-              {t("title")}{" "}
-              <NumberTicker value={80} className="text-primary" />
+              {t("title")} <NumberTicker value={80} className="text-primary" />
               <span className="text-primary">%</span>
             </span>
           </h1>
@@ -55,18 +55,6 @@ export async function MarketingHero() {
           </div>
         </div>
       </div>
-    </div>
-  )
-}
-
-export function Blur() {
-  return (
-    <div
-      aria-hidden="true"
-      className="pointer-events-none absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20"
-    >
-      <div className="fix-safari-blur h-56 bg-gradient-to-br from-blue-500 to-blue-400 blur-[106px] dark:from-sky-700"></div>
-      <div className="fix-safari-blur h-32 bg-gradient-to-r from-sky-400 to-blue-300 blur-[106px] dark:to-blue-600"></div>
     </div>
   )
 }

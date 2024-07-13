@@ -2,6 +2,7 @@ import { getTranslations, unstable_setRequestLocale } from "next-intl/server"
 
 import { siteConfig } from "@/config/site"
 
+import { MarketingAbout } from "@/components/app/marketing-about"
 import { MarketingHero } from "@/components/app/marketing-hero"
 
 export async function generateMetadata() {
@@ -40,6 +41,7 @@ export default async function Home({
   return (
     <div>
       <MarketingHero />
+      <MarketingAbout />
     </div>
   )
 }
