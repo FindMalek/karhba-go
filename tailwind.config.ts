@@ -74,6 +74,14 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        shine: {
+          from: {
+            backgroundPosition: "0 0",
+          },
+          to: {
+            backgroundPosition: "-200% 0",
+          },
+        },
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -132,6 +140,7 @@ const config = {
         slide: "slide var(--speed) ease-in-out infinite alternate",
         grid: "grid 15s linear infinite",
         "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
+        shine: "shine 2s linear infinite",
       },
       backgroundImage: {
         "blue-purple-gradient":

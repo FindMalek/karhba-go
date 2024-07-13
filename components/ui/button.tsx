@@ -1,4 +1,5 @@
 import * as React from "react"
+import type { CSSProperties } from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
 
@@ -36,7 +37,7 @@ const buttonVariants = cva(
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-  VariantProps<typeof buttonVariants> {
+    VariantProps<typeof buttonVariants> {
   asChild?: boolean
 }
 
@@ -56,25 +57,23 @@ Button.displayName = "Button"
 
 export { Button, buttonVariants }
 
-import type { CSSProperties } from 'react';
-
 interface ShimmerButtonProps {
-  shimmerColor?: string;
-  shimmerSize?: string;
-  borderRadius?: string;
-  shimmerDuration?: string;
-  background?: string;
-  className?: string;
-  children?: React.ReactNode;
-  [key: string]: any; 
+  shimmerColor?: string
+  shimmerSize?: string
+  borderRadius?: string
+  shimmerDuration?: string
+  background?: string
+  className?: string
+  children?: React.ReactNode
+  [key: string]: any
 }
 
 export const ShimmerButton = ({
-  shimmerColor = '#ffffff',
-  shimmerSize = '1px',
-  shimmerDuration = '1.5s',
-  borderRadius = '100px',
-  background = 'radial-gradient(ellipse 80% 50% at 50% 120%,rgba(62, 61, 117),rgba(18, 18, 38))',
+  shimmerColor = "#ffffff",
+  shimmerSize = "1px",
+  shimmerDuration = "1.5s",
+  borderRadius = "100px",
+  background = "radial-gradient(ellipse 80% 50% at 50% 120%,rgba(62, 61, 117),rgba(18, 18, 38))",
   className,
   children,
   ...props
@@ -83,16 +82,17 @@ export const ShimmerButton = ({
     <button
       style={
         {
-          '--spread': '90deg',
-          '--shimmer-color': shimmerColor,
-          '--radius': borderRadius,
-          '--speed': shimmerDuration,
-          '--cut': shimmerSize,
-          '--bg': background,
+          "--spread": "90deg",
+          "--shimmer-color": shimmerColor,
+          "--radius": borderRadius,
+          "--speed": shimmerDuration,
+          "--cut": shimmerSize,
+          "--bg": background,
         } as CSSProperties
       }
       className={`
-        group relative flex h-11 cursor-pointer overflow-hidden whitespace-nowrap px-6 text-white shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]  transition-all duration-300 [background:var(--bg)] [border-radius:var(--radius)] hover:scale-105 dark:text-black ${className || ''
+        group relative flex h-11 cursor-pointer overflow-hidden whitespace-nowrap px-6 text-white shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]  transition-all duration-300 [background:var(--bg)] [border-radius:var(--radius)] hover:scale-105 dark:text-black ${
+          className || ""
         }
       `}
       {...props}
@@ -106,5 +106,5 @@ export const ShimmerButton = ({
       <div className="absolute [background:var(--bg)] [border-radius:var(--radius)] [inset:var(--cut)]" />
       {children}
     </button>
-  );
-};
+  )
+}
