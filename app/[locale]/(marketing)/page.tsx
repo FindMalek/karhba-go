@@ -4,6 +4,7 @@ import { siteConfig } from "@/config/site"
 
 import { MarketingWaitlistForm } from "@/components/app/marketing-waitlist-form"
 import { BackgroundBeams } from "@/components/fancy/background-beams"
+import { MarketingHero } from "@/components/app/marketing-hero"
 
 export async function generateMetadata() {
   const t = await getTranslations("app.pages.home")
@@ -40,19 +41,8 @@ export default async function Home({
   const t = await getTranslations("app.pages.home")
 
   return (
-    <div className="relative flex h-screen w-full flex-col items-center justify-center bg-neutral-950 antialiased">
-      <div className="mx-auto max-w-2xl p-4">
-        <h1 className="relative z-10 bg-gradient-to-b from-neutral-200  to-neutral-600 bg-clip-text text-center font-sans text-5xl font-bold text-transparent md:text-7xl">
-          {t("join-the-waitlist")}
-        </h1>
-        <p></p>
-        <p className="relative z-10 mx-auto my-2 max-w-lg text-center text-sm text-neutral-500">
-          {t("paragraph")}
-        </p>
-
-        <MarketingWaitlistForm />
-      </div>
-      <BackgroundBeams />
+    <div >
+      <MarketingHero />
     </div>
   )
 }
