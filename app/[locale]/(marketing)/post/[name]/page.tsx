@@ -79,7 +79,7 @@ export default async function Page({
 
   const post = allPosts.find(
     (about) =>
-      about.slugAsParams === `post / ${name}` &&
+      about.slugAsParams === `post/${name}` &&
       about.lang === translatedApp("language")
   )
 
