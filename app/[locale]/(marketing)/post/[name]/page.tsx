@@ -6,8 +6,8 @@ import { getTranslations, unstable_setRequestLocale } from "next-intl/server"
 
 import { notFoundMetadata, siteConfig } from "@/config/site"
 
-import { RenderMarkdown } from "@/components/layout/markdown"
 import { BlurryCircle } from "@/components/fancy/blurry-circle"
+import { RenderMarkdown } from "@/components/layout/markdown"
 import { PostStatus } from "@/components/shared/post-status"
 
 export async function generateStaticParams({

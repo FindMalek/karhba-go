@@ -60,3 +60,17 @@ export interface Status {
   name: string
   description: string
 }
+
+export type ListItemProps = {
+  title: string
+  href: string
+  external?: boolean
+  icon: () => React.JSX.Element
+  className?: string
+}
+
+export type NavLink = {
+  name: string
+  title: string
+  path: string
+}

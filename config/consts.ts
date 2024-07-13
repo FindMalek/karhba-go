@@ -1,5 +1,5 @@
 import type { Email } from "@/types/mail"
-import type { Status } from "@/types"
+import type { NavLink, Status } from "@/types"
 
 export const locales = ["en", "fr"] as const
 export const localePrefix = "as-needed"
@@ -70,5 +70,23 @@ export const getNotFoundStatus = (t: (key: string) => string): Status[] => [
     name: "<Contact>",
     description:
       t("reach-out") + ` ${location.origin}/talk-to-us ` + t("for-help"),
+  },
+]
+
+export const navigationLinks: NavLink[] = [
+  {
+    name: "pricing",
+    title: "Pricing",
+    path: "/pricing",
+  },
+  {
+    title: "Updates",
+    path: "/updates",
+    name: "updates",
+  },
+  {
+    title: "Story",
+    path: "/post/story",
+    name: "story",
   },
 ]

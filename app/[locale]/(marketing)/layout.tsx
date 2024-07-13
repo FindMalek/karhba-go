@@ -2,7 +2,7 @@ import { unstable_setRequestLocale } from "next-intl/server"
 
 import { locales } from "@/config/consts"
 
-import { MarketingHeader } from "@/components/layout/marketing-header"
+import { SiteHeader } from "@/components/layout/site-header"
 
 interface RootLayoutProps {
   children: React.ReactNode
@@ -23,7 +23,7 @@ export default function RootLayout({
 
   return (
     <main>
-      <MarketingHeader />
+      <SiteHeader />
       {children}
     </main>
   )

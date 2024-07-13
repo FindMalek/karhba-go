@@ -7,7 +7,6 @@ import {
   ChevronLeft,
   ChevronRight,
   ChevronsUpDown,
-  Command,
   CreditCard,
   File,
   FileText,
@@ -38,6 +37,7 @@ import {
   MdOutlineIntegrationInstructions,
   MdOutlineMemory,
 } from "react-icons/md"
+import { FaXTwitter } from "react-icons/fa6";
 
 export type Icon = LucideIcon
 
@@ -76,7 +76,7 @@ export const Icons = {
   moon: Moon,
   laptop: Laptop,
   search: Search,
-  twitter: X,
+  twitter: FaXTwitter,
   check: Check,
   orderbook: BookOpenText,
   chevronsUpDown: ChevronsUpDown,
