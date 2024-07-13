@@ -27,8 +27,8 @@
       }
     },
     "components": {
-      "form": {
-        "waitlist": {
+      "app": {
+        "marketing-waitlist": {
           "subscribed": "Subscribed",
           "email-placeholder": "Enter your email",
           "join": "Join",
@@ -36,6 +36,13 @@
           "error-description": "This email is already subscribed. Please enter a different email address.",
           "success": "Welcome to the waitlist!",
           "success-description": "You're now on the waitlist. We'll be in touch soon."
+        },
+        "marketing-hero": {
+          "badge-tagline": "v0.1.0 is out now",
+          "title": "Speed up your project setup by",
+          "description": "Boost your web development with FindPlate, your complete Next.js starter kit for SaaS, AI tools, and more. Turn your ideas into revenue quickly.",
+          "buy": "Get FindPlate",
+          "read": "Read more"
         }
       },
       "ui": {

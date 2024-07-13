@@ -15,7 +15,7 @@ import { subscribeAction } from "@/actions/subscribe"
 
 function SubmitButton() {
   const { pending } = useFormStatus()
-  const t = useTranslations("app.components.form.waitlist")
+  const t = useTranslations("app.components.app.marketing-waitlist")
 
   if (pending) {
     return (
@@ -38,7 +38,7 @@ function SubmitButton() {
 export function MarketingWaitlistForm() {
   const { track } = useLogSnag()
   const [isSubmitted, setSubmitted] = useState(false)
-  const t = useTranslations("app.components.form.waitlist")
+  const t = useTranslations("app.components.app.marketing-waitlist")
 
   return (
     <div>

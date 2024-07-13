@@ -3,8 +3,6 @@ import { getTranslations, unstable_setRequestLocale } from "next-intl/server"
 import { siteConfig } from "@/config/site"
 
 import { MarketingHero } from "@/components/app/marketing-hero"
-import { MarketingWaitlistForm } from "@/components/app/marketing-waitlist-form"
-import { BackgroundBeams } from "@/components/fancy/background-beams"
 
 export async function generateMetadata() {
   const t = await getTranslations("app.pages.home")
@@ -38,7 +36,6 @@ export default async function Home({
   params: { locale: string }
 }) {
   unstable_setRequestLocale(locale)
-  const t = await getTranslations("app.pages.home")
 
   return (
     <div>
