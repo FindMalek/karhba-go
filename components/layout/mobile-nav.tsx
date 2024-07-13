@@ -4,9 +4,9 @@ import * as React from "react"
 import { LinkProps } from "next/link"
 import { Link, useRouter } from "@navigation"
 
+import { navigationLinks } from "@/config/consts"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
-import { navigationLinks } from "@/config/consts"
 
 import { Icons } from "@/components/shared/icons"
 import { Button } from "@/components/ui/button"
@@ -107,7 +107,7 @@ function MobileLink({
         onOpenChange?.(false)
       }}
       className={cn(className)}
-    /* {...props} */
+      /* {...props} */
     >
       {children}
     </Link>

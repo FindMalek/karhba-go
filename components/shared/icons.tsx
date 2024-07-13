@@ -32,12 +32,12 @@ import {
   X,
 } from "lucide-react"
 import { FaDiscord, FaGithub } from "react-icons/fa"
+import { FaXTwitter } from "react-icons/fa6"
 import {
   MdOutlineDescription,
   MdOutlineIntegrationInstructions,
   MdOutlineMemory,
 } from "react-icons/md"
-import { FaXTwitter } from "react-icons/fa6";
 
 export type Icon = LucideIcon
 
