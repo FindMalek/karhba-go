@@ -98,39 +98,37 @@ export function MainNav() {
                 <NavigationMenuTrigger className="text-foreground/60 hover:text-foreground/80 mx-0 bg-transparent p-0 font-normal transition-colors hover:bg-transparent data-[active]:bg-transparent data-[state=open]:bg-transparent">
                   Developers
                 </NavigationMenuTrigger>
-                <NavigationMenuContent className="bg-[#FDFDFC] dark:bg-[#121212]">
-                  <div className="flex">
-                    <Link
-                      href="/engine"
-                      className="border-border border-r-DEFAULT"
-                    >
-                      <div className="mb-6 w-[215px]">
-                        <NavigationMenuLink asChild>
-                          <GlowingStarsBackgroundCard>
-                            <span className="text-lg font-medium">
-                              FindPlate Engine
-                            </span>
-                            <div className="flex items-end justify-between">
-                              <p className="line-clamp-2 text-sm leading-snug text-[#707070]">
-                                One API to rule them all. Unlimited connections.
-                              </p>
-                            </div>
-                          </GlowingStarsBackgroundCard>
-                        </NavigationMenuLink>
-                      </div>
-                    </Link>
-                    <ul className="flex w-[400px] flex-col p-4">
-                      {components.map((component) => (
-                        <ListItem
-                          key={component.title}
-                          title={component.title}
-                          href={component.href}
-                          icon={component.icon}
-                          external={component.external}
-                        />
-                      ))}
-                    </ul>
-                  </div>
+                <NavigationMenuContent className="flex">
+                  <Link
+                    href="/engine"
+                    className="border-border border-r-DEFAULT"
+                  >
+                    <div className="mb-6 w-[215px]">
+                      <NavigationMenuLink asChild>
+                        <GlowingStarsBackgroundCard>
+                          <span className="text-lg font-medium">
+                            FindPlate Engine
+                          </span>
+                          <div className="flex items-end justify-between">
+                            <p className="line-clamp-2 text-sm leading-snug text-[#707070]">
+                              One API to rule them all. Unlimited connections.
+                            </p>
+                          </div>
+                        </GlowingStarsBackgroundCard>
+                      </NavigationMenuLink>
+                    </div>
+                  </Link>
+                  <ul className="flex w-[400px] flex-col p-4">
+                    {components.map((component) => (
+                      <ListItem
+                        key={component.title}
+                        title={component.title}
+                        href={component.href}
+                        icon={component.icon}
+                        external={component.external}
+                      />
+                    ))}
+                  </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
             </NavigationMenuList>
