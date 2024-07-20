@@ -1,12 +1,14 @@
 import { Link } from "@navigation"
 import { getTranslations } from "next-intl/server"
 
+import { cn } from "@/lib/utils"
+
 import { Blur } from "@/components/fancy/blur"
 import { NumberTicker } from "@/components/fancy/number-ticker"
 import { RetroGrid } from "@/components/fancy/retro-grid"
 import { Icons } from "@/components/shared/icons"
 import { BadgeShine } from "@/components/ui/badge"
-import { ShimmerButton } from "@/components/ui/button"
+import { buttonVariants } from "@/components/ui/button"
 
 export async function MarketingHero() {
   const t = await getTranslations("app.components.app.marketing-hero")
@@ -33,25 +35,38 @@ export async function MarketingHero() {
           <p className="mt-8 text-xl leading-8 text-zinc-600 dark:text-zinc-300">
             {t("description")}
           </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-4">
-            <Link href="/docs/introduction" className="w-full sm:w-max">
-              <ShimmerButton
-                className="relative flex w-full items-center justify-center transition-all hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset] sm:w-max"
-                background="radial-gradient(ellipse 80% 70% at 50% 120%, #4d94ff, #1a75ff)"
+
+          <div className="mx-0 flex w-full max-w-full flex-col gap-4 py-3 sm:max-w-lg sm:flex-row md:mx-auto">
+            <div className="flex w-full flex-col gap-2 sm:flex-row sm:gap-4">
+              <Link
+                href="/buy"
+                className={cn(
+                  buttonVariants({
+                    variant: "default",
+                    size: "lg",
+                  }),
+                  "gap-2 whitespace-pre md:flex",
+                  "group relative w-full rounded-xl text-sm font-semibold tracking-tighter ring-offset-inherit transition-all duration-150 ease-in-out hover:ring-2 hover:ring-black hover:ring-offset-2 hover:ring-offset-current dark:hover:ring-neutral-50"
+                )}
               >
-                <span className="relative z-10 flex items-center whitespace-pre text-center text-base font-semibold leading-none tracking-tight text-white">
-                  {t("buy")} <Icons.chevronRight className="size-6 pr-1" />
-                </span>
-              </ShimmerButton>
-            </Link>
-            <Link
-              href="/post/about"
-              className="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:border before:border-transparent before:bg-blue-600/10 before:bg-gradient-to-b before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max dark:before:border-zinc-700 dark:before:bg-zinc-800"
-            >
-              <span className="relative text-base font-semibold text-blue-600 dark:text-white">
+                {t("buy")}
+                <Icons.chevronRight className="ml-1  size-4 shrink-0 transition-all duration-300 ease-out group-hover:translate-x-1" />
+              </Link>
+              <Link
+                href="/post/story"
+                className={cn(
+                  buttonVariants({
+                    size: "lg",
+                    variant: "outline",
+                  }),
+                  "gap-2 whitespace-pre md:flex",
+                  "group relative w-full overflow-hidden rounded-xl text-sm font-semibold tracking-tighter transition-all duration-150 ease-in-out hover:ring-2 hover:ring-neutral-300 hover:ring-offset-2 hover:ring-offset-inherit dark:hover:ring-black dark:hover:ring-offset-black "
+                )}
+              >
                 {t("read")}
-              </span>
-            </Link>
+                <Icons.chevronRight className="ml-1 size-4 shrink-0 transition-all duration-300 ease-out group-hover:translate-x-1" />
+              </Link>
+            </div>
           </div>
         </div>
       </div>
