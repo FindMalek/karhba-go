@@ -7,6 +7,7 @@ import {
   Check,
   ChevronLeft,
   ChevronRight,
+  ChevronsRightIcon,
   ChevronsUpDown,
   CreditCard,
   DatabaseZapIcon,
@@ -61,6 +62,7 @@ function LogoIcon({ className }: { className?: string }) {
 
 export const Icons = {
   logo: LogoIcon,
+  logoLucide: ChevronsRightIcon,
   close: X,
   spinner: Loader2,
   chevronLeft: ChevronLeft,

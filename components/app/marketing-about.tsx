@@ -1,6 +1,6 @@
 import React from "react"
 
-import { AnimatedBeam } from "@/components/fancy/animated-beam"
+import { MarketingAboutAuth } from "@/components/app/marketing-about-auth"
 import { BentoCard, BentoGrid } from "@/components/fancy/bento-grid"
 import { GradientCircle } from "@/components/fancy/gradient-circle"
 import { Icons } from "@/components/shared/icons"
@@ -10,14 +10,11 @@ const features = [
     Icon: Icons.lock,
     name: "Secure Authentication",
     description: "Ready-to-use, secure user authentication with Next Auth.",
-    href: "#",
+    href: "https://next-auth.js.org/",
     cta: "Learn more",
     className: "col-span-3 lg:col-span-1",
     background: (
-      <>
-        Implement robust user login, registration, and password management
-        out-of-the-box.
-      </>
+      <MarketingAboutAuth className="absolute left-1/2 h-[300px] max-w-md -translate-x-1/2 border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105" />
     ),
   },
   {
