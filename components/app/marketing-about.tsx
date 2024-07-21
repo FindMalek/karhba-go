@@ -1,16 +1,27 @@
-import React from "react"
+import React from "react";
+import { getTranslations } from "next-intl/server";
 
-import { MarketingAboutAnalytics } from "@/components/app/marketing-about-analytics"
-import { MarketingAboutAuth } from "@/components/app/marketing-about-auth"
-import { MarketingAboutComponents } from "@/components/app/marketing-about-components"
-import { MarketingAboutMarquee } from "@/components/app/marketing-about-marquee"
-import { BentoCard, BentoGrid } from "@/components/fancy/bento-grid"
-import { EvervaultCard } from "@/components/fancy/evervault-card"
-import { Globe } from "@/components/fancy/globe"
-import { GradientCircle } from "@/components/fancy/gradient-circle"
-import { Icons } from "@/components/shared/icons"
 
-const features = [
+
+import { siteConfig } from "@/config/site";
+
+
+
+import { MarketingAboutAnalytics } from "@/components/app/marketing-about-analytics";
+import { MarketingAboutAuth } from "@/components/app/marketing-about-auth";
+import { MarketingAboutComponents } from "@/components/app/marketing-about-components";
+import { MarketingAboutMarquee } from "@/components/app/marketing-about-marquee";
+import { BentoCard, BentoGrid } from "@/components/fancy/bento-grid";
+import { EvervaultCard } from "@/components/fancy/evervault-card";
+import { Globe } from "@/components/fancy/globe";
+import { GradientCircle } from "@/components/fancy/gradient-circle";
+import { Icons } from "@/components/shared/icons";
+
+
+
+
+
+const features = (t: (arg: string) => string) => [
   {
     Icon: Icons.lock,
     name: "Secure Authentication",
@@ -48,7 +59,7 @@ const features = [
     Icon: Icons.puzzle,
     name: "Ready Components",
     description: "Variety of pre-built pages and UI components.",
-    href: "#",
+    href: "/upcoming",
     cta: "Learn more",
     className: "col-span-3 lg:col-span-1",
     background: (
@@ -95,18 +106,61 @@ const features = [
       </>
     ),
   },
+  {
+    Icon: Icons.zap,
+    name: t("features.f-8.title"),
+    description: t("features.f-8.description"),
+    className: "col-span-3 lg:col-span-1",
+    href: "https://imgsrc.io/tools/open-graph-debugger",
+    cta: "Learn more",
+    background: (
+      <>
+        Easily add and manage content with a built-in blogging system, complete
+        with Markdown support for rich text formatting.
+      </>
+    ),
+  },
+  {
+    Icon: Icons.copy,
+    name: t("features.f-9.title"),
+    description: t("features.f-9.description"),
+    className: "col-span-3 lg:col-span-1",
+    href: "#",
+    cta: "Learn more",
+    background: (
+      <>
+        Easily add and manage content with a built-in blogging system, complete
+        with Markdown support for rich text formatting.
+      </>
+    ),
+  },
+  {
+    Icon: Icons.toggleRight,
+    name: t("features.f-10.title"),
+    description: t("features.f-10.description"),
+    className: "col-span-3 lg:col-span-1",
+    href: "#",
+    cta: "Learn more",
+    background: (
+      <>
+        Easily add and manage content with a built-in blogging system, complete
+        with Markdown support for rich text formatting.
+      </>
+    ),
+  },
 ]
 
-export function MarketingAbout() {
+export async function MarketingAbout() {
+  const t = await getTranslations("app.components.app.marketing-about")
   return (
     <GradientCircle>
       <h2 className="container mb-8 text-center text-xl font-normal">
-        <span className="text-4xl font-semibold">FindPlate? </span>
+        <span className="text-4xl font-semibold">{siteConfig.name}? </span>
         <br className="block lg:hidden" />
-        The boilerplate comes with everything you need to build modern web apps.
+        {t("overview")}
       </h2>
       <BentoGrid className="container">
-        {features.map((feature, idx) => (
+        {features(t).map((feature, idx) => (
           <BentoCard key={idx} {...feature} />
         ))}
       </BentoGrid>

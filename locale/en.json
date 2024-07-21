@@ -43,6 +43,51 @@
           "description": "Boost your web development with FindPlate, your complete Next.js starter kit for SaaS, AI tools, and more. Turn your ideas into revenue quickly.",
           "buy": "Get FindPlate",
           "read": "Read more"
+        },
+        "marketing-about": {
+          "overview": "The boilerplate comes with everything you need to build modern web apps.",
+          "features": {
+            "f-1": {
+              "title": "Secure Authentication",
+              "description": "Ready-to-use, secure user authentication with Next Auth."
+            },
+            "f-2": {
+              "title": "Insightful Analytics",
+              "description": "Monitor your app's usage with LogSnag."
+            },
+            "f-3": {
+              "title": "Email Integration",
+              "description": "Seamless email sending with Nodemailer and Gmail SMTP."
+            },
+            "f-4": {
+              "title": "Ready Components",
+              "description": "Variety of pre-built pages and UI components."
+            },
+            "f-5": {
+              "title": "Database Management",
+              "description": "Efficient database handling with Prisma ORM."
+            },
+            "f-6": {
+              "title": "Global Reach",
+              "description": "Built-in support for multiple languages with Next Internationalization."
+            },
+            "f-7": {
+              "title": "Blog Pages",
+              "description": "Create, edit, and manage blog posts with static Markdown pages."
+            },
+            "f-8": {
+              "title": "SEO Optimized",
+              "description": "Optimized for search engines with next-seo."
+            },
+            "f-9": {
+              "title": "Functions Everywhere",
+              "description": "Copy & paste functionalities with server actions"
+            },
+            "f-10": {
+              "title": "Dark Mode",
+              "description": "Toggle between light and dark mode with a click."
+            }
+          }
         }
       },
       "ui": {

@@ -9,6 +9,7 @@ import {
   ChevronRight,
   ChevronsRightIcon,
   ChevronsUpDown,
+  CopyIcon,
   CreditCard,
   DatabaseZapIcon,
   File,
@@ -33,10 +34,12 @@ import {
   Search,
   Settings,
   SunMedium,
+  ToggleRightIcon,
   Trash,
   UserCircleIcon,
   UserCogIcon,
   X,
+  ZapIcon,
 } from "lucide-react"
 import { FaDiscord, FaGithub } from "react-icons/fa"
 import { FaXTwitter } from "react-icons/fa6"
@@ -107,4 +110,7 @@ export const Icons = {
   blog: BookImageIcon,
   graph: LineChartIcon,
   prisma: SiPrisma,
+  zap: ZapIcon,
+  copy: CopyIcon,
+  toggleRight: ToggleRightIcon
 }
