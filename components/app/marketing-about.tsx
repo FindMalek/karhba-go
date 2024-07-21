@@ -1,12 +1,19 @@
-import React from "react"
+import React from "react";
 
-import { MarketingAboutAnalytics } from "@/components/app/marketing-about-analytics"
-import { MarketingAboutAuth } from "@/components/app/marketing-about-auth"
-import { MarketingAboutComponents } from "@/components/app/marketing-about-components"
-import { MarketingAboutMarquee } from "@/components/app/marketing-about-marquee"
-import { BentoCard, BentoGrid } from "@/components/fancy/bento-grid"
-import { GradientCircle } from "@/components/fancy/gradient-circle"
-import { Icons } from "@/components/shared/icons"
+
+
+import { MarketingAboutAnalytics } from "@/components/app/marketing-about-analytics";
+import { MarketingAboutAuth } from "@/components/app/marketing-about-auth";
+import { MarketingAboutComponents } from "@/components/app/marketing-about-components";
+import { MarketingAboutMarquee } from "@/components/app/marketing-about-marquee";
+import { BentoCard, BentoGrid } from "@/components/fancy/bento-grid";
+import { EvervaultCard } from "@/components/fancy/evervault-card";
+import { GradientCircle } from "@/components/fancy/gradient-circle";
+import { Icons } from "@/components/shared/icons";
+
+
+
+
 
 const features = [
   {
@@ -58,10 +65,12 @@ const features = [
     name: "Database Management",
     description: "Efficient database handling with Prisma ORM.",
     className: "col-span-3 lg:col-span-1",
-    href: "#",
+    href: "https://www.prisma.io/nextjs",
     cta: "Learn more",
     background: (
-      <>Simplify your database interactions with powerful Prisma tools. </>
+      <EvervaultCard className="absolute left-1/2 h-[200px] max-w-md -translate-x-1/2 border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105">
+        <Icons.prisma className="size-16" />
+      </EvervaultCard>
     ),
   },
   {
@@ -99,6 +108,9 @@ const features = [
 export function MarketingAbout() {
   return (
     <GradientCircle>
+      <h2 className="mb-8 text-center text-xl font-medium">
+        The boilerplate comes with everything you need to build a modern web
+      </h2>
       <BentoGrid className="container">
         {features.map((feature, idx) => (
           <BentoCard key={idx} {...feature} />

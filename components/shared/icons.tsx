@@ -1,50 +1,13 @@
-import Image from "next/image"
-import {
-  AlertTriangle,
-  ArrowRight,
-  BookImageIcon,
-  BookOpenText,
-  Check,
-  ChevronLeft,
-  ChevronRight,
-  ChevronsRightIcon,
-  ChevronsUpDown,
-  CreditCard,
-  DatabaseZapIcon,
-  File,
-  FileText,
-  GlobeIcon,
-  HelpCircle,
-  Image as ImageIcon,
-  Laptop,
-  LineChartIcon,
-  Loader2,
-  LockIcon,
-  LucideIcon,
-  MailIcon,
-  Monitor,
-  Moon,
-  MoreVertical,
-  PencilIcon,
-  PhoneIcon,
-  Pizza,
-  Plus,
-  PuzzleIcon,
-  Search,
-  Settings,
-  SunMedium,
-  Trash,
-  UserCircleIcon,
-  UserCogIcon,
-  X,
-} from "lucide-react"
-import { FaDiscord, FaGithub } from "react-icons/fa"
-import { FaXTwitter } from "react-icons/fa6"
-import {
-  MdOutlineDescription,
-  MdOutlineIntegrationInstructions,
-  MdOutlineMemory,
-} from "react-icons/md"
+import Image from "next/image";
+import { AlertTriangle, ArrowRight, BookImageIcon, BookOpenText, Check, ChevronLeft, ChevronRight, ChevronsRightIcon, ChevronsUpDown, CreditCard, DatabaseZapIcon, File, FileText, GlobeIcon, HelpCircle, Image as ImageIcon, Laptop, LineChartIcon, Loader2, LockIcon, LucideIcon, MailIcon, Monitor, Moon, MoreVertical, PencilIcon, PhoneIcon, Pizza, Plus, PuzzleIcon, Search, Settings, SunMedium, Trash, UserCircleIcon, UserCogIcon, X } from "lucide-react";
+import { FaDiscord, FaGithub } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { MdOutlineDescription, MdOutlineIntegrationInstructions, MdOutlineMemory } from "react-icons/md";
+import { SiPrisma } from "react-icons/si";
+
+
+
+
 
 export type Icon = LucideIcon
 
@@ -105,4 +68,5 @@ export const Icons = {
   databaseZap: DatabaseZapIcon,
   blog: BookImageIcon,
   graph: LineChartIcon,
+  prisma: SiPrisma
 }

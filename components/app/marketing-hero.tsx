@@ -26,10 +26,14 @@ export async function MarketingHero() {
             </BadgeShine>
           </Link>
 
-          <h1 className="pt-4 text-5xl font-extrabold text-zinc-900 md:text-6xl xl:text-7xl dark:text-white">
+          <h1 className="pt-4 text-5xl font-bold text-zinc-900 md:text-6xl xl:text-7xl dark:text-white">
             <span className="gradient-text inline-block">
-              {t("title")} <NumberTicker value={80} className="text-primary" />
-              <span className="text-primary">%</span>
+              {t("title")}{" "}
+              <NumberTicker
+                value={65}
+                className="text-primary font-extrabold"
+              />
+              <span className="text-primary font-extrabold">%</span>
             </span>
           </h1>
           <p className="mt-8 text-xl leading-8 text-zinc-600 dark:text-zinc-300">

@@ -37,7 +37,7 @@ export { Badge, badgeVariants }
 
 export function BadgeShine({ children }: { children: React.ReactNode }) {
   return (
-    <div className="animate-shine inline-flex items-center justify-center rounded-full border border-neutral-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-3 py-1 text-base font-medium text-neutral-400 transition-colors">
+    <div className="animate-shine border-secondary-foreground text-secondary-foreground inline-flex items-center justify-center rounded-full border bg-[linear-gradient(110deg,#ffffff,45%,#d3d3d3,55%,#ffffff)] bg-[length:200%_100%] px-3 py-1 text-base font-medium transition-colors dark:bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)]">
       {children}
     </div>
   )
