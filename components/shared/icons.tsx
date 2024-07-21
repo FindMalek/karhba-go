@@ -112,5 +112,5 @@ export const Icons = {
   prisma: SiPrisma,
   zap: ZapIcon,
   copy: CopyIcon,
-  toggleRight: ToggleRightIcon
+  toggleRight: ToggleRightIcon,
 }

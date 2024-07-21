@@ -1,25 +1,19 @@
-import React from "react";
-import { getTranslations } from "next-intl/server";
+import React from "react"
+import { getTranslations } from "next-intl/server"
 
+import { siteConfig } from "@/config/site"
 
-
-import { siteConfig } from "@/config/site";
-
-
-
-import { MarketingAboutAnalytics } from "@/components/app/marketing-about-analytics";
-import { MarketingAboutAuth } from "@/components/app/marketing-about-auth";
-import { MarketingAboutComponents } from "@/components/app/marketing-about-components";
-import { MarketingAboutMarquee } from "@/components/app/marketing-about-marquee";
-import { BentoCard, BentoGrid } from "@/components/fancy/bento-grid";
-import { EvervaultCard } from "@/components/fancy/evervault-card";
-import { Globe } from "@/components/fancy/globe";
-import { GradientCircle } from "@/components/fancy/gradient-circle";
-import { Icons } from "@/components/shared/icons";
-
-
-
-
+import { MarketingAboutAnalytics } from "@/components/app/marketing-about-analytics"
+import { MarketingAboutAuth } from "@/components/app/marketing-about-auth"
+import { MarketingAboutBlogs } from "@/components/app/marketing-about-blogs"
+import { MarketingAboutComponents } from "@/components/app/marketing-about-components"
+import { MarketingAboutMarquee } from "@/components/app/marketing-about-marquee"
+import { MarketingAboutSeo } from "@/components/app/marketing-about-seo"
+import { BentoCard, BentoGrid } from "@/components/fancy/bento-grid"
+import { EvervaultCard } from "@/components/fancy/evervault-card"
+import { Globe } from "@/components/fancy/globe"
+import { GradientCircle } from "@/components/fancy/gradient-circle"
+import { Icons } from "@/components/shared/icons"
 
 const features = (t: (arg: string) => string) => [
   {
@@ -97,13 +91,10 @@ const features = (t: (arg: string) => string) => [
     description:
       "Create, edit, and manage blog posts with static Markdown pages.",
     className: "col-span-3 lg:col-span-1",
-    href: "#",
+    href: "/post",
     cta: "Learn more",
     background: (
-      <>
-        Easily add and manage content with a built-in blogging system, complete
-        with Markdown support for rich text formatting.
-      </>
+      <MarketingAboutBlogs className="absolute left-1/2 h-[300px] max-w-md -translate-x-1/2 border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105" />
     ),
   },
   {
@@ -111,13 +102,10 @@ const features = (t: (arg: string) => string) => [
     name: t("features.f-8.title"),
     description: t("features.f-8.description"),
     className: "col-span-3 lg:col-span-1",
-    href: "https://imgsrc.io/tools/open-graph-debugger",
+    href: "https://imgsrc.io/tools",
     cta: "Learn more",
     background: (
-      <>
-        Easily add and manage content with a built-in blogging system, complete
-        with Markdown support for rich text formatting.
-      </>
+      <MarketingAboutSeo className="absolute left-1/2 h-[300px] max-w-md -translate-x-1/2 border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105" />
     ),
   },
   {
