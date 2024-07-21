@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils"
 export const EvervaultCard = ({
   text,
   className,
-  children
+  children,
 }: {
   text?: string
   className?: string
@@ -36,13 +36,13 @@ export const EvervaultCard = ({
   return (
     <div
       className={cn(
-        "relative  flex aspect-square  h-full w-full items-center justify-center bg-transparent p-0.5",
+        "relative  flex aspect-square  size-full items-center justify-center bg-transparent p-0.5",
         className
       )}
     >
       <div
         onMouseMove={onMouseMove}
-        className="group/card relative flex h-full w-full items-center justify-center overflow-hidden rounded-3xl bg-transparent"
+        className="group/card relative flex size-full items-center justify-center overflow-hidden rounded-3xl bg-transparent"
       >
         <CardPattern
           mouseX={mouseX}
@@ -51,7 +51,7 @@ export const EvervaultCard = ({
         />
         <div className="relative z-10 flex items-center justify-center">
           <div className="relative flex size-20 items-center justify-center rounded-full text-4xl font-bold text-white">
-            <div className="absolute h-full w-full rounded-full bg-white/[0.8] blur-sm dark:bg-black/[0.8]" />
+            <div className="absolute size-full rounded-full bg-white/[0.8] blur-sm dark:bg-black/[0.8]" />
             <span className="z-20 text-black dark:text-white">{children}</span>
           </div>
         </div>

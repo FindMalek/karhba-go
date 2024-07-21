@@ -1,19 +1,14 @@
-import React from "react";
+import React from "react"
 
-
-
-import { MarketingAboutAnalytics } from "@/components/app/marketing-about-analytics";
-import { MarketingAboutAuth } from "@/components/app/marketing-about-auth";
-import { MarketingAboutComponents } from "@/components/app/marketing-about-components";
-import { MarketingAboutMarquee } from "@/components/app/marketing-about-marquee";
-import { BentoCard, BentoGrid } from "@/components/fancy/bento-grid";
-import { EvervaultCard } from "@/components/fancy/evervault-card";
-import { GradientCircle } from "@/components/fancy/gradient-circle";
-import { Icons } from "@/components/shared/icons";
-
-
-
-
+import { MarketingAboutAnalytics } from "@/components/app/marketing-about-analytics"
+import { MarketingAboutAuth } from "@/components/app/marketing-about-auth"
+import { MarketingAboutComponents } from "@/components/app/marketing-about-components"
+import { MarketingAboutMarquee } from "@/components/app/marketing-about-marquee"
+import { BentoCard, BentoGrid } from "@/components/fancy/bento-grid"
+import { EvervaultCard } from "@/components/fancy/evervault-card"
+import { Globe } from "@/components/fancy/globe"
+import { GradientCircle } from "@/components/fancy/gradient-circle"
+import { Icons } from "@/components/shared/icons"
 
 const features = [
   {
@@ -79,13 +74,10 @@ const features = [
     description:
       "Built-in support for multiple languages with Next Internationalization.",
     className: "col-span-3 lg:col-span-2",
-    href: "#",
+    href: "https://next-intl-docs.vercel.app/",
     cta: "Learn more",
     background: (
-      <>
-        Easily add and manage translations to make your app accessible to a
-        global audience.
-      </>
+      <Globe className="absolute left-1/2 h-[300px] max-w-md -translate-x-1/2 border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105" />
     ),
   },
   {
@@ -108,8 +100,10 @@ const features = [
 export function MarketingAbout() {
   return (
     <GradientCircle>
-      <h2 className="mb-8 text-center text-xl font-medium">
-        The boilerplate comes with everything you need to build a modern web
+      <h2 className="container mb-8 text-center text-xl font-normal">
+        <span className="text-4xl font-semibold">FindPlate? </span>
+        <br className="block lg:hidden" />
+        The boilerplate comes with everything you need to build modern web apps.
       </h2>
       <BentoGrid className="container">
         {features.map((feature, idx) => (
