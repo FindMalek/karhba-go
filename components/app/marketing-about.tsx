@@ -22,7 +22,7 @@ const features = [
     Icon: Icons.graph,
     name: "Insightful Analytics",
     description: "Monitor your app's usage with LogSnag.",
-    className: "col-span-3 lg:col-span-2",
+    className: "col-span-3 lg:col-span-1",
     href: "https://logsnag.com",
     cta: "Learn more",
     background: (
@@ -35,7 +35,7 @@ const features = [
     description: "Seamless email sending with Nodemailer and Gmail SMTP.",
     href: "#",
     cta: "Learn more",
-    className: "col-span-3 lg:col-span-1",
+    className: "col-span-3 lg:col-span-1 row-span-1 lg:row-span-2",
     background: (
       <>Send transactional emails, notifications, and more without hassle.</>
     ),
@@ -46,7 +46,7 @@ const features = [
     description: "Variety of pre-built pages and UI components.",
     href: "#",
     cta: "Learn more",
-    className: "col-span-3 lg:col-span-2",
+    className: "col-span-3 lg:col-span-1",
     background: (
       <>
         Speed up your development with customizable, pre-designed pages and
@@ -54,22 +54,6 @@ const features = [
       </>
     ),
   },
-  {
-    Icon: Icons.globe,
-    name: "Global Reach",
-    description:
-      "Built-in support for multiple languages with Next Internationalization.",
-    className: "col-span-3 lg:col-span-1",
-    href: "#",
-    cta: "Learn more",
-    background: (
-      <>
-        Easily add and manage translations to make your app accessible to a
-        global audience.
-      </>
-    ),
-  },
-
   {
     Icon: Icons.databaseZap,
     name: "Database Management",
@@ -79,6 +63,21 @@ const features = [
     cta: "Learn more",
     background: (
       <>Simplify your database interactions with powerful Prisma tools. </>
+    ),
+  },
+  {
+    Icon: Icons.globe,
+    name: "Global Reach",
+    description:
+      "Built-in support for multiple languages with Next Internationalization.",
+    className: "col-span-3 lg:col-span-2",
+    href: "#",
+    cta: "Learn more",
+    background: (
+      <>
+        Easily add and manage translations to make your app accessible to a
+        global audience.
+      </>
     ),
   },
   {
