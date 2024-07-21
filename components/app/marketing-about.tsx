@@ -1,10 +1,17 @@
-import React from "react"
+import React from "react";
 
-import { MarketingAboutAnalytics } from "@/components/app/marketing-about-analytics"
-import { MarketingAboutAuth } from "@/components/app/marketing-about-auth"
-import { BentoCard, BentoGrid } from "@/components/fancy/bento-grid"
-import { GradientCircle } from "@/components/fancy/gradient-circle"
-import { Icons } from "@/components/shared/icons"
+
+
+import { MarketingAboutAnalytics } from "@/components/app/marketing-about-analytics";
+import { MarketingAboutAuth } from "@/components/app/marketing-about-auth";
+import { MarketingAboutMarquee } from "@/components/app/marketing-about-marquee";
+import { BentoCard, BentoGrid } from "@/components/fancy/bento-grid";
+import { GradientCircle } from "@/components/fancy/gradient-circle";
+import { Icons } from "@/components/shared/icons";
+
+
+
+
 
 const features = [
   {
@@ -33,11 +40,11 @@ const features = [
     Icon: Icons.mail,
     name: "Email Integration",
     description: "Seamless email sending with Nodemailer and Gmail SMTP.",
-    href: "#",
+    href: "https://nodemailer.com",
     cta: "Learn more",
     className: "col-span-3 lg:col-span-1 row-span-1 lg:row-span-2",
     background: (
-      <>Send transactional emails, notifications, and more without hassle.</>
+      <MarketingAboutMarquee className="absolute left-1/2 h-[600px] max-w-md -translate-x-1/2 border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105" />
     ),
   },
   {
