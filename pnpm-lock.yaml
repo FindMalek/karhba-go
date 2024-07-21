@@ -121,6 +121,9 @@ importers:
       "@vercel/analytics":
         specifier: ^1.2.2
         version: 1.2.2(next@14.2.1(@babel/core@7.24.5)(@opentelemetry/api@1.8.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)
+      canvas-confetti:
+        specifier: ^1.9.3
+        version: 1.9.3
       class-variance-authority:
         specifier: ^0.7.0
         version: 0.7.0
@@ -4124,6 +4127,12 @@ packages:
     resolution:
       {
         integrity: sha512-QFutAY4NgaelojVMjY63o6XlZyORPaLfyMnsl3HgnWdJUcX6K0oaJymHjH8PT5Gk7sTm8rvC/c5COUQKXqmOMA==,
+      }
+
+  canvas-confetti@1.9.3:
+    resolution:
+      {
+        integrity: sha512-rFfTURMvmVEX1gyXFgn5QMn81bYk70qa0HLzcIOSVEyl57n6o9ItHeBtUSWdvKAPY0xlvBHno4/v3QPrT83q9g==,
       }
 
   ccount@2.0.1:
@@ -11985,6 +11994,8 @@ snapshots:
   camelcase-css@2.0.1: {}
 
   caniuse-lite@1.0.30001610: {}
+
+  canvas-confetti@1.9.3: {}
 
   ccount@2.0.1: {}
 

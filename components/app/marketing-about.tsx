@@ -1,17 +1,12 @@
-import React from "react";
+import React from "react"
 
-
-
-import { MarketingAboutAnalytics } from "@/components/app/marketing-about-analytics";
-import { MarketingAboutAuth } from "@/components/app/marketing-about-auth";
-import { MarketingAboutMarquee } from "@/components/app/marketing-about-marquee";
-import { BentoCard, BentoGrid } from "@/components/fancy/bento-grid";
-import { GradientCircle } from "@/components/fancy/gradient-circle";
-import { Icons } from "@/components/shared/icons";
-
-
-
-
+import { MarketingAboutAnalytics } from "@/components/app/marketing-about-analytics"
+import { MarketingAboutAuth } from "@/components/app/marketing-about-auth"
+import { MarketingAboutComponents } from "@/components/app/marketing-about-components"
+import { MarketingAboutMarquee } from "@/components/app/marketing-about-marquee"
+import { BentoCard, BentoGrid } from "@/components/fancy/bento-grid"
+import { GradientCircle } from "@/components/fancy/gradient-circle"
+import { Icons } from "@/components/shared/icons"
 
 const features = [
   {
@@ -55,10 +50,7 @@ const features = [
     cta: "Learn more",
     className: "col-span-3 lg:col-span-1",
     background: (
-      <>
-        Speed up your development with customizable, pre-designed pages and
-        components.
-      </>
+      <MarketingAboutComponents className="absolute left-1/2 h-[200px] max-w-md -translate-x-1/2 border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105" />
     ),
   },
   {
