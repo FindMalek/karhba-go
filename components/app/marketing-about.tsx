@@ -1,5 +1,6 @@
 import React from "react"
 
+import { MarketingAboutAnalytics } from "@/components/app/marketing-about-analytics"
 import { MarketingAboutAuth } from "@/components/app/marketing-about-auth"
 import { BentoCard, BentoGrid } from "@/components/fancy/bento-grid"
 import { GradientCircle } from "@/components/fancy/gradient-circle"
@@ -25,10 +26,7 @@ const features = [
     href: "#",
     cta: "Learn more",
     background: (
-      <>
-        Track user interactions and gather valuable insights to improve your
-        application.
-      </>
+      <MarketingAboutAnalytics className="absolute left-1/2 h-[300px] max-w-md -translate-x-1/2 border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105" />
     ),
   },
   {
