@@ -37,17 +37,17 @@ export function MarketingAboutAuth({ className }: { className?: string }) {
       <div className="flex size-full max-w-lg flex-row items-stretch justify-between gap-10">
         <div className="flex flex-col justify-center">
           <Circle ref={div1Ref}>
-            <Icons.lock className="text-secondary size-12" />
+            <Icons.lock className="text-secondary-foreground size-12" />
           </Circle>
         </div>
         <div className="flex flex-col justify-center">
           <Circle ref={div2Ref} className="size-16">
-            <Icons.logoLucide className="text-secondary group-hover:text-primary size-12" />
+            <Icons.logoLucide className="text-secondary-foreground group-hover:text-primary size-12" />
           </Circle>
         </div>
         <div className="flex flex-col justify-center">
           <Circle ref={div3Ref}>
-            <Icons.user className="text-secondary size-12" />
+            <Icons.user className="text-secondary-foreground size-12" />
           </Circle>
         </div>
       </div>

@@ -11,7 +11,7 @@ const features = [
     Icon: Icons.lock,
     name: "Secure Authentication",
     description: "Ready-to-use, secure user authentication with Next Auth.",
-    href: "https://next-auth.js.org/",
+    href: "https://next-auth.js.org",
     cta: "Learn more",
     className: "col-span-3 lg:col-span-1",
     background: (
@@ -23,7 +23,7 @@ const features = [
     name: "Insightful Analytics",
     description: "Monitor your app's usage with LogSnag.",
     className: "col-span-3 lg:col-span-2",
-    href: "#",
+    href: "https://logsnag.com",
     cta: "Learn more",
     background: (
       <MarketingAboutAnalytics className="absolute left-1/2 h-[300px] max-w-md -translate-x-1/2 border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105" />
