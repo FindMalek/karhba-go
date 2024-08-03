@@ -88,6 +88,12 @@
               "description": "Toggle between light and dark mode with a click."
             }
           }
+        },
+        "marketing-call-to-action": {
+          "title": "Build Faster, Ship Sooner 🚀",
+          "description": "Jumpstart your next project with us and get your product to market faster.",
+          "buy": "Get Started",
+          "learn-more": "Learn More"
         }
       },
       "ui": {
