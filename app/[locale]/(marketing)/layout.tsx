@@ -2,6 +2,7 @@ import { unstable_setRequestLocale } from "next-intl/server"
 
 import { locales } from "@/config/consts"
 
+import { SiteFooter } from "@/components/layout/site-footer"
 import { SiteHeader } from "@/components/layout/site-header"
 
 interface RootLayoutProps {
@@ -25,6 +26,7 @@ export default function RootLayout({
     <main>
       <SiteHeader />
       {children}
+      <SiteFooter />
     </main>
   )
 }
