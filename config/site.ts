@@ -13,6 +13,25 @@ export const siteConfig: SiteConfig = {
     twitter: "https://twitter.com/foundmalek",
     github: "https://github.com/findmalek/findplate",
   },
+  author: {
+    name: "findmalek",
+    url: "https://www.findmalek.com",
+  },
+  keywords: [
+    "Next.js",
+    "React",
+    "Tailwind CSS",
+    "Server Components",
+    "Radix UI",
+    "Boilerplate",
+    "NextAuth.js",
+    "Prisma",
+    "TypeScript",
+    "Markdown",
+    "MDX",
+    "Internationalization",
+    "SEO",
+  ],
 }
 
 export const notFoundMetadata = (t: (key: string) => string) => {

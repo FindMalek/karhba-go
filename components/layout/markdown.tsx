@@ -1,6 +1,9 @@
 import * as React from "react"
 import Image from "next/image"
 import { useMDXComponent } from "next-contentlayer/hooks"
+import { CopyToClipboard } from "react-copy-to-clipboard"
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
+import { darcula } from "react-syntax-highlighter/dist/cjs/styles/prism"
 
 import { cn } from "@/lib/utils"
 
@@ -133,15 +136,16 @@ const components = {
       {...props}
     />
   ),
-  // TODO: Improve how the pre looks
-  pre: ({ className, ...props }) => (
+  pre: ({ className, children, ...props }) => (
     <pre
       className={cn(
         "mb-4 mt-6 overflow-x-auto rounded-lg bg-black p-4",
         className
       )}
       {...props}
-    />
+    >
+      {children}
+    </pre>
   ),
   code: ({ className, ...props }) => (
     <code

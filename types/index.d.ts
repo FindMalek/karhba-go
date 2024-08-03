@@ -40,6 +40,11 @@ export type SiteConfig = {
     notFound: string
     logo: string
   }
+  author: {
+    name: string
+    url: string
+  }
+  keywords: string[]
 }
 
 export type DocsConfig = {

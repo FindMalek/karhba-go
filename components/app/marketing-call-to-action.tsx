@@ -1,55 +1,55 @@
 "use client"
 
 import { useEffect, useId, useRef, useState } from "react"
+import { Link } from "@navigation"
 import { motion, useAnimation, useInView } from "framer-motion"
-import {
-  BarChart,
-  ChevronRight,
-  File,
-  Globe,
-  HeartHandshake,
-  Rss,
-  Shield,
-} from "lucide-react"
+import { useTranslations } from "next-intl"
 
 import { cn } from "@/lib/utils"
 
 import { Marquee } from "@/components/fancy/marquee"
+import { Icons } from "@/components/shared/icons"
 import { buttonVariants } from "@/components/ui/button"
 
 const tiles = [
   {
-    icon: <HeartHandshake className="size-full" />,
+    icon: <Icons.lock className="size-full" />,
     bg: (
       <div className="pointer-events-none absolute left-1/2 top-1/2 size-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-full bg-gradient-to-r from-orange-600 via-rose-600 to-violet-600 opacity-70 blur-[20px]"></div>
     ),
   },
   {
-    icon: <Globe className="size-full" />,
+    icon: <Icons.mail className="size-full" />,
     bg: (
       <div className="pointer-events-none absolute left-1/2 top-1/2 size-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-full bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-500 opacity-70 blur-[20px]"></div>
     ),
   },
   {
-    icon: <File className="size-full" />,
+    icon: <Icons.databaseZap className="size-full" />,
     bg: (
       <div className="pointer-events-none absolute left-1/2 top-1/2 size-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-full bg-gradient-to-r from-green-500 via-teal-500 to-emerald-600 opacity-70 blur-[20px]"></div>
     ),
   },
   {
-    icon: <Shield className="size-full" />,
+    icon: <Icons.blog className="size-full" />,
     bg: (
       <div className="pointer-events-none absolute left-1/2 top-1/2 size-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-full bg-gradient-to-r from-yellow-400 via-orange-500 to-yellow-600 opacity-70 blur-[20px]"></div>
     ),
   },
   {
-    icon: <Rss className="size-full" />,
+    icon: <Icons.globe className="size-full" />,
     bg: (
       <div className="pointer-events-none absolute left-1/2 top-1/2 size-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-full bg-gradient-to-r from-orange-600 via-rose-600 to-violet-600 opacity-70 blur-[20px]"></div>
     ),
   },
   {
-    icon: <BarChart className="size-full" />,
+    icon: <Icons.prisma className="size-full" />,
+    bg: (
+      <div className="pointer-events-none absolute left-1/2 top-1/2 size-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-full bg-gradient-to-r from-gray-600 via-gray-500 to-gray-400 opacity-70 blur-[20px]"></div>
+    ),
+  },
+  {
+    icon: <Icons.copy className="size-full" />,
     bg: (
       <div className="pointer-events-none absolute left-1/2 top-1/2 size-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible rounded-full bg-gradient-to-r from-gray-600 via-gray-500 to-gray-400 opacity-70 blur-[20px]"></div>
     ),
@@ -108,7 +108,7 @@ const Card = (card: { icon: JSX.Element; bg: JSX.Element }) => {
   )
 }
 
-export function CallToAction() {
+export function MarketingCallToAction() {
   const [randomTiles1, setRandomTiles1] = useState<typeof tiles>([])
   const [randomTiles2, setRandomTiles2] = useState<typeof tiles>([])
   const [randomTiles3, setRandomTiles3] = useState<typeof tiles>([])
@@ -126,9 +126,9 @@ export function CallToAction() {
 
   return (
     <section id="cta">
-      <div className="py-14">
+      <div className="py-8">
         <div className="container flex w-full flex-col items-center justify-center p-4">
-          <div className="relative flex w-full max-w-[1000px] flex-col items-center justify-center overflow-hidden rounded-[2rem] border">
+          <div className="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-[2rem] border">
             <Marquee
               reverse
               className="-delay-[200ms] [--duration:20s]"
@@ -159,28 +159,42 @@ export function CallToAction() {
             </Marquee>
             <div className="absolute z-10">
               <div className="mx-auto size-24 rounded-[2rem] border bg-white/10 p-3 shadow-2xl backdrop-blur-md lg:size-32 dark:bg-black/10">
-                <HeartHandshake className="mx-auto size-16 text-black lg:size-24 dark:text-white" />
+                <Icons.logoLucide className="text-primary mx-auto size-16 lg:size-24 " />
               </div>
-              <div className="text-primary z-10 mt-4 flex flex-col items-center text-center">
+              <div className="text-secondary-foreground z-10 mt-4 flex flex-col items-center text-center">
                 <h1 className="text-3xl font-bold lg:text-4xl">
-                  Stop wasting time on design.
+                  Build Faster, Ship Sooner 🚀
                 </h1>
                 <p className="mt-2">
-                  Start your 7-day free trial. No credit card required.
+                  Jumpstart your next project with us and get your product to
+                  market faster.
                 </p>
-                <a
-                  href="/"
-                  className={cn(
-                    buttonVariants({
-                      size: "lg",
-                      variant: "outline",
-                    }),
-                    "group mt-4 rounded-[2rem] px-6"
-                  )}
-                >
-                  Get Started
-                  <ChevronRight className="ml-1 size-4 transition-all duration-300 ease-out group-hover:translate-x-1" />
-                </a>
+                <div className="mt-4 flex justify-center gap-4">
+                  <Link
+                    href="/buy"
+                    className={cn(
+                      buttonVariants({
+                        size: "lg",
+                      }),
+                      "group mt-4 rounded-[2rem] px-6"
+                    )}
+                  >
+                    Get Started
+                    <Icons.chevronRight className="ml-1 size-4 transition-all duration-300 ease-out group-hover:translate-x-1" />
+                  </Link>
+                  <Link
+                    href="/post/story"
+                    className={cn(
+                      buttonVariants({
+                        size: "lg",
+                        variant: "outline",
+                      }),
+                      "group mt-4 rounded-[2rem] px-6"
+                    )}
+                  >
+                    Learn More
+                  </Link>
+                </div>
               </div>
               <div className="absolute inset-0 -z-10 rounded-full  bg-white opacity-40 blur-xl dark:bg-black" />
             </div>
