@@ -46,6 +46,7 @@
         },
         "marketing-about": {
           "overview": "The boilerplate comes with everything you need to build modern web apps.",
+          "learn-more": "Learn more",
           "features": {
             "f-1": {
               "title": "Secure Authentication",
@@ -94,6 +95,47 @@
           "description": "Jumpstart your next project with us and get your product to market faster.",
           "buy": "Get Started",
           "learn-more": "Learn More"
+        },
+        "marketing-faqs": {
+          "title": "Frequently Asked Questions",
+          "description": "Need help with something? Here are some of the most common questions we get.",
+          "contact": "Still have questions? Email us at",
+          "section-1": {
+            "title": "General",
+            "questions": {
+              "ques-1": "What is FindPlate?",
+              "answer-1": "FindPlate is a comprehensive Next.js boilerplate designed to help web developers quickly start and build web applications, offering essential features like authentication, email sending, and more right out of the box.",
+              "ques-2": "Who is FindPlate for?",
+              "answer-2": "FindPlate is ideal for web developers, software engineers, and tech startups looking for a robust foundation to start their projects quickly and efficiently."
+            }
+          },
+          "section-2": {
+            "title": "Functionality",
+            "questions": {
+              "ques-1": "What features does FindPlate include?",
+              "answer-1": "FindPlate includes ready-to-use authentication, email sending, pre-built pages and components, internationalization (i18n) support, Tailwind CSS styling, Prisma ORM integration, and a blogging system.",
+              "ques-2": "Can I customize the pre-built components?",
+              "answer-2": "Yes, all pre-built pages and components are fully customizable, allowing you to tailor them to fit your specific project needs."
+            }
+          },
+          "section-3": {
+            "title": "Setup",
+            "questions": {
+              "ques-1": "How do I install FindPlate?",
+              "answer-1": "Installation is straightforward—simply clone the repository, install the necessary dependencies, and configure your environment variables to get started.",
+              "ques-2": "Is there documentation available for setup?",
+              "answer-2": "Currently not, we are working on it. However, you can refer to the README file in the FindPlate repository for detailed instructions on setting up the project."
+            }
+          },
+          "section-4": {
+            "title": "Support",
+            "questions": {
+              "ques-1": "Will I receive updates after purchasing FindPlate?",
+              "answer-1": "Yes, all users receive lifetime updates, ensuring that your boilerplate stays up-to-date with the latest tools and best practices.",
+              "ques-2": "Where can I get support if I encounter issues?",
+              "answer-2": "Support is available through our dedicated support channels, where you can ask questions and get help with any issues you might face while using FindPlate."
+            }
+          }
         }
       },
       "ui": {

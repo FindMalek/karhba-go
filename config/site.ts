@@ -16,6 +16,7 @@ export const siteConfig: SiteConfig = {
   author: {
     name: "findmalek",
     url: "https://www.findmalek.com",
+    email: "hi@findmalek.com",
   },
   keywords: [
     "Next.js",

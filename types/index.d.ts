@@ -43,6 +43,7 @@ export type SiteConfig = {
   author: {
     name: string
     url: string
+    email: string
   }
   keywords: string[]
 }
