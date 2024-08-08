@@ -1,5 +1,4 @@
 import { faqs } from "@/data/faqs"
-import { getTranslations } from "next-intl/server"
 
 import { siteConfig } from "@/config/site"
 
@@ -11,21 +10,19 @@ import {
 } from "@/components/ui/accordion"
 
 export async function MarketingFAQs() {
-  const t = await getTranslations("app.components.app.marketing-faqs")
-
   return (
     <section id="faq" className="py-14">
       <div className="container mx-auto px-4 md:px-8">
         <div className="mx-auto max-w-5xl text-center">
           <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">
-            {t("title")}
+            Questions fréquemment posées
           </h2>
           <p className="text-secondary-foreground mt-6 text-xl leading-8">
-            {t("description")}
+            Besoin d&apos;aide pour quelque chose ? Voici quelques-unes des questions les plus courantes que nous recevons.
           </p>
         </div>
         <div className="container mx-auto my-12 max-w-[600px] space-y-12">
-          {faqs(t).map((faq, idx) => (
+          {faqs.map((faq, idx) => (
             <section key={idx} id={"faq-" + faq.section}>
               <h2 className="text-foreground/60 mb-4 text-left text-base font-semibold tracking-tight">
                 {faq.section}
@@ -50,7 +47,7 @@ export async function MarketingFAQs() {
           ))}
         </div>
         <h4 className="text-foreground/80 mb-12 text-center text-sm font-medium tracking-tight">
-          {t("contact")}{" "}
+          Vous avez encore des questions ? Envoyez-nous un email à
           <a href={"mailto:" + siteConfig.author.email} className="underline">
             {siteConfig.author.email}
           </a>

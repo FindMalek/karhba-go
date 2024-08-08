@@ -1,4 +1,4 @@
-import { Link } from "@navigation"
+import Link from "next/link"
 
 export function TypographyH1({ text }: { text: string }) {
   return (

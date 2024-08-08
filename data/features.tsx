@@ -8,13 +8,13 @@ import { EvervaultCard } from "@/components/fancy/evervault-card"
 import { Globe } from "@/components/fancy/globe"
 import { Icons } from "@/components/shared/icons"
 
-export const features = (t: (arg: string) => string) => [
+export const features = [
   {
     Icon: Icons.lock,
-    name: t("features.f-1.title"),
-    description: t("features.f-1.description"),
+    name: "Sécurité renforcée",
+    description: "Vos données et transactions sont protégées par des protocoles de sécurité avancés.",
     href: "https://next-auth.js.org",
-    cta: t("learn-more"),
+    cta: "En savoir plus",
     className: "col-span-3 lg:col-span-1",
     background: (
       <MarketingAboutAuth className="absolute left-1/2 h-[300px] max-w-md -translate-x-1/2 border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105" />
@@ -22,21 +22,21 @@ export const features = (t: (arg: string) => string) => [
   },
   {
     Icon: Icons.graph,
-    name: t("features.f-2.title"),
-    description: t("features.f-2.description"),
+    name: "Analyses et rapports",
+    description: "Suivez les performances de votre flotte grâce à des analyses détaillées.",
     className: "col-span-3 lg:col-span-1",
     href: "https://logsnag.com",
-    cta: t("learn-more"),
+    cta: "En savoir plus",
     background: (
       <MarketingAboutAnalytics className="absolute left-1/2 h-[300px] max-w-md -translate-x-1/2 border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105" />
     ),
   },
   {
     Icon: Icons.mail,
-    name: t("features.f-3.title"),
-    description: t("features.f-3.description"),
+    name: "Communication facile",
+    description: "Communiquez directement avec les clients via notre système de messagerie intégré.",
     href: "https://nodemailer.com",
-    cta: t("learn-more"),
+    cta: "En savoir plus",
     className: "col-span-3 lg:col-span-1 row-span-1 lg:row-span-2",
     background: (
       <MarketingAboutMarquee className="absolute left-1/2 h-[600px] max-w-md -translate-x-1/2 border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105" />
@@ -44,10 +44,10 @@ export const features = (t: (arg: string) => string) => [
   },
   {
     Icon: Icons.puzzle,
-    name: t("features.f-4.title"),
-    description: t("features.f-4.description"),
+    name: "Gestion simplifiée",
+    description: "Gérez vos annonces et réservations en toute simplicité grâce à une interface intuitive.",
     href: "/upcoming",
-    cta: t("learn-more"),
+    cta: "En savoir plus",
     className: "col-span-3 lg:col-span-1",
     background: (
       <MarketingAboutComponents className="absolute left-1/2 h-[200px] max-w-md -translate-x-1/2 border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105" />
@@ -55,11 +55,11 @@ export const features = (t: (arg: string) => string) => [
   },
   {
     Icon: Icons.databaseZap,
-    name: t("features.f-5.title"),
-    description: t("features.f-5.description"),
+    name: "Performances optimisées",
+    description: "Profitez d'une plateforme rapide et fiable, optimisée pour des performances maximales.",
     className: "col-span-3 lg:col-span-1",
     href: "https://www.prisma.io/nextjs",
-    cta: t("learn-more"),
+    cta: "En savoir plus",
     background: (
       <EvervaultCard className="absolute left-1/2 h-[200px] max-w-md -translate-x-1/2 border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105">
         <Icons.prisma className="size-16" />
@@ -68,44 +68,44 @@ export const features = (t: (arg: string) => string) => [
   },
   {
     Icon: Icons.globe,
-    name: t("features.f-6.title"),
-    description: t("features.f-6.description"),
+    name: "Support multilingue",
+    description: "Accédez à la plateforme dans plusieurs langues pour une expérience utilisateur globale.",
     className: "col-span-3 lg:col-span-2",
     href: "https://next-intl-docs.vercel.app/",
-    cta: t("learn-more"),
+    cta: "En savoir plus",
     background: (
       <Globe className="absolute left-1/2 h-[300px] max-w-md -translate-x-1/2 border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105" />
     ),
   },
   {
     Icon: Icons.blog,
-    name: t("features.f-7.title"),
-    description: t("features.f-7.description"),
+    name: "Avis et commentaires",
+    description: "Consultez les avis des utilisateurs et laissez votre propre retour d'expérience.",
     className: "col-span-3 lg:col-span-1",
     href: "/post",
-    cta: t("learn-more"),
+    cta: "En savoir plus",
     background: (
       <MarketingAboutBlogs className="absolute left-1/2 h-[300px] max-w-md -translate-x-1/2 border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105" />
     ),
   },
   {
     Icon: Icons.zap,
-    name: t("features.f-8.title"),
-    description: t("features.f-8.description"),
+    name: "SEO optimisé",
+    description: "Bénéficiez d'une visibilité accrue grâce à des outils SEO intégrés.",
     className: "col-span-3 lg:col-span-1",
     href: "https://imgsrc.io/tools",
-    cta: t("learn-more"),
+    cta: "En savoir plus",
     background: (
       <MarketingAboutSeo className="absolute left-1/2 h-[300px] max-w-md -translate-x-1/2 border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105" />
     ),
   },
   {
     Icon: Icons.copy,
-    name: t("features.f-9.title"),
-    description: t("features.f-9.description"),
+    name: "Gestion de contenu",
+    description: "Ajoutez et gérez facilement du contenu grâce à un système de blog intégré.",
     className: "col-span-3 lg:col-span-1",
     href: "#",
-    cta: t("learn-more"),
+    cta: "En savoir plus",
     background: (
       <>
         Easily add and manage content with a built-in blogging system, complete
@@ -115,11 +115,11 @@ export const features = (t: (arg: string) => string) => [
   },
   {
     Icon: Icons.toggleRight,
-    name: t("features.f-10.title"),
-    description: t("features.f-10.description"),
+    name: "Personnalisation",
+    description: "Personnalisez votre expérience utilisateur avec des fonctionnalités sur mesure.",
     className: "col-span-3 lg:col-span-1",
     href: "#",
-    cta: t("learn-more"),
+    cta: "En savoir plus",
     background: (
       <>
         Easily add and manage content with a built-in blogging system, complete

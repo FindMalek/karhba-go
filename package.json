@@ -1,5 +1,5 @@
 {
-  "name": "findplate",
+  "name": "@findmalek/karhba-go",
   "version": "0.1.0",
   "private": true,
   "author": {
@@ -8,13 +8,13 @@
   },
   "scripts": {
     "dev": "next dev",
-    "generate": "contentlayer build && prisma generate --no-engine && prisma db push",
+    "generate": "contentlayer build && prisma generate && prisma db push",
     "build": "pnpm run generate && next build",
     "turbo": "next dev --turbo",
     "start": "next start",
     "lint": "next lint",
     "preview": "next build && next start",
-    "postinstall": "prisma generate --no-engine",
+    "postinstall": "prisma generate",
     "prepare": "husky",
     "lint:fix": "next lint --fix",
     "lint:strict": "next lint '*/**/*.{js,jsx,ts,tsx}'",
@@ -74,7 +74,6 @@
     "lucide-react": "^0.368.0",
     "next": "14.2.1",
     "next-contentlayer": "^0.3.4",
-    "next-intl": "^3.11.3",
     "next-themes": "^0.3.0",
     "nodemailer": "^6.9.13",
     "react": "^18",

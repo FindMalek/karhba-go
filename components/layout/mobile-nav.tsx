@@ -2,8 +2,9 @@
 
 import * as React from "react"
 import { LinkProps } from "next/link"
-import { Link, useRouter } from "@navigation"
 
+import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { navigationLinks } from "@/config/consts"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"

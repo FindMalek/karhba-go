@@ -1,15 +1,13 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { useTranslations } from "next-intl"
 
 import type { Status } from "@/types"
 
 import { getNotFoundStatus } from "@/config/consts"
 
 export function NotFoundStatuses() {
-  const t = useTranslations("app.components.layout.not-found-statuses")
-  const data = getNotFoundStatus(t)
+  const data = getNotFoundStatus
 
   const ref = useRef(false)
   const [statuses, setStatuses] = useState<Status[]>([])

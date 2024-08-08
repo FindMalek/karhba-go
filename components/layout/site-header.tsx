@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "@navigation"
+import Link from "next/link"
 
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"

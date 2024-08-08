@@ -1,9 +1,8 @@
 "use client"
 
 import { useEffect, useId, useRef, useState } from "react"
-import { Link } from "@navigation"
+import Link from "next/link"
 import { motion, useAnimation, useInView } from "framer-motion"
-import { useTranslations } from "next-intl"
 
 import { cn } from "@/lib/utils"
 
@@ -62,10 +61,10 @@ const shuffleArray = (array: any[]) => {
   while (currentIndex !== 0) {
     randomIndex = Math.floor(Math.random() * currentIndex)
     currentIndex--
-    ;[array[currentIndex], array[randomIndex]] = [
-      array[randomIndex],
-      array[currentIndex],
-    ]
+      ;[array[currentIndex], array[randomIndex]] = [
+        array[randomIndex],
+        array[currentIndex],
+      ]
   }
   return array
 }
@@ -104,7 +103,6 @@ const Card = (card: { icon: JSX.Element; bg: JSX.Element }) => {
 }
 
 export function MarketingCallToAction() {
-  const t = useTranslations("app.components.app.marketing-call-to-action")
   const [randomTiles1, setRandomTiles1] = useState<typeof tiles>([])
   const [randomTiles2, setRandomTiles2] = useState<typeof tiles>([])
   const [randomTiles3, setRandomTiles3] = useState<typeof tiles>([])
@@ -156,8 +154,9 @@ export function MarketingCallToAction() {
               <Icons.logoLucide className="text-primary mx-auto size-16 lg:size-24 " />
             </div>
             <div className="text-secondary-foreground z-10 mt-4 flex flex-col items-center text-center">
-              <h1 className="text-3xl font-bold lg:text-4xl">{t("title")}</h1>
-              <p className="mt-2">{t("description")}</p>
+              <h1 className="text-3xl font-bold lg:text-4xl">Réservez Votre Voiture Idéale Dès Maintenant              </h1>
+              <p className="mt-2">Explorez notre large sélection de véhicules, trouvez celui qui correspond parfaitement à vos besoins, et réservez en toute simplicité. Avec KarhbaGo, partez l’esprit tranquille grâce à une expérience de location sécurisée et sans tracas.
+              </p>
               <div className="mt-4 flex justify-center gap-4">
                 <Link
                   href="/buy"
@@ -168,7 +167,7 @@ export function MarketingCallToAction() {
                     "group mt-4 rounded-[2rem] px-6"
                   )}
                 >
-                  {t("buy")}
+                  Joindre nous
                   <Icons.chevronRight className="ml-1 size-4 transition-all duration-300 ease-out group-hover:translate-x-1" />
                 </Link>
                 <Link
@@ -181,7 +180,7 @@ export function MarketingCallToAction() {
                     "group mt-4 rounded-[2rem] px-6"
                   )}
                 >
-                  {t("learn-more")}
+                  Plus
                 </Link>
               </div>
             </div>

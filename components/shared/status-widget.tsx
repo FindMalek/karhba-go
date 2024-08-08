@@ -1,48 +1,45 @@
 import { getStatus } from "@openstatus/react"
-import { useTranslations } from "next-intl"
-
 import { cn } from "@/lib/utils"
 
 export async function StatusWidget() {
-  const t = useTranslations("app.components.ui.status-widget")
-  const res = await getStatus("findplate")
+  const res = await getStatus("karhbago")
 
   const { status } = res
 
   const getStatusLevel = (level: string) => {
     return {
       operational: {
-        label: t("operational"),
+        label: "Opérationnel",
         color: "bg-green-500",
         color2: "bg-green-400",
       },
       degraded_performance: {
-        label: t("degraded-performance"),
+        label: "Performance dégradée",
         color: "bg-yellow-500",
         color2: "bg-yellow-400",
       },
       partial_outage: {
-        label: t("partial-outage"),
+        label: "Panne partielle",
         color: "bg-yellow-500",
         color2: "bg-yellow-400",
       },
       major_outage: {
-        label: t("major-outage"),
+        label: "Panne majeure",
         color: "bg-red-500",
         color2: "bg-red-400",
       },
       unknown: {
-        label: t("unknown"),
+        label: "Inconnu",
         color: "bg-gray-500",
         color2: "bg-gray-400",
       },
       incident: {
-        label: t("incident"),
+        label: "Incident",
         color: "bg-yellow-500",
         color2: "bg-yellow-400",
       },
       under_maintenance: {
-        label: t("under-maintenance"),
+        label: "En maintenance",
         color: "bg-gray-500",
         color2: "bg-gray-400",
       },

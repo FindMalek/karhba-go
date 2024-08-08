@@ -2,7 +2,6 @@ import type { Metadata } from "next"
 import Image from "next/image"
 import { notFound } from "next/navigation"
 import { allPosts } from "contentlayer/generated"
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server"
 
 import { notFoundMetadata, siteConfig } from "@/config/site"
 
@@ -25,17 +24,13 @@ export async function generateStaticParams({
 export async function generateMetadata({
   params,
 }): Promise<Metadata | undefined> {
-  const translatedApp = await getTranslations("app")
   const post = allPosts.find(
     (about) =>
-      about.slugAsParams === `post/${params.name}` &&
-      about.lang === translatedApp("language")
+      about.slugAsParams === `post/${params.name}`
   )
 
-  const translatedMetadata = await getTranslations("app.pages.not-found")
-
   if (!post) {
-    return notFoundMetadata(translatedMetadata)
+    return notFoundMetadata
   }
 
   const {
@@ -70,18 +65,13 @@ export async function generateMetadata({
 }
 
 export default async function Page({
-  params: { name, locale },
+  params: { name },
 }: {
-  params: { name: string; locale: string }
+  params: { name: string; }
 }) {
-  unstable_setRequestLocale(locale)
-  const translatedApp = await getTranslations("app")
-
   const post = allPosts.find(
     (about) =>
-      about.slugAsParams === `post/${name}` &&
-      about.lang === translatedApp("language")
-  )
+      about.slugAsParams === `post/${name}`)
 
   if (!post) {
     notFound()
