@@ -1,5 +1,4 @@
-import { SiteFooter } from "@/components/layout/site-footer"
-import { SiteHeader } from "@/components/layout/site-header"
+import { redirect } from "next/navigation"
 
 import { getAuthedUser } from "@/actions/session"
 
@@ -10,11 +9,13 @@ interface RootLayoutProps {
 export default async function RootLayout({ children }: RootLayoutProps) {
   const user = await getAuthedUser()
 
+  if (user && user.verified) {
+    return redirect("/")
+  }
+
   return (
-    <main>
-      <SiteHeader user={user} />
+    <main className="bg-background min-h-screen font-sans antialiased">
       {children}
-      <SiteFooter />
     </main>
   )
 }

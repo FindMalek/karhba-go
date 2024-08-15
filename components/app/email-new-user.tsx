@@ -20,8 +20,8 @@ export function EmailNewUser({ username }: { username: string }) {
     <Html>
       <Head />
       <Preview>
-        Welcome to {siteConfig.name} - {username} will be thrilled to have you
-        on board!
+        Bienvenue sur {siteConfig.name} - {username} sera ravi de vous
+        accueillir !
       </Preview>
       <Body style={main}>
         <Container style={container}>
@@ -29,33 +29,34 @@ export function EmailNewUser({ username }: { username: string }) {
             src={siteConfig.images.logo}
             width="170"
             height="50"
-            alt={`${siteConfig.name} logo`}
+            alt={`Logo de ${siteConfig.name}`}
             style={logo}
           />
-          <Text style={heading}>Welcome to {siteConfig.name}</Text>
-          <Text style={paragraph}>Hi {username},</Text>
+          <Text style={heading}>Bienvenue sur {siteConfig.name}</Text>
+          <Text style={paragraph}>Bonjour {username},</Text>
           <Text style={paragraph}>
-            Welcome to {siteConfig.name}! I&apos;m Ayoub, one of the founders.
+            Bienvenue sur {siteConfig.name} ! Je suis Malek, l&apos;un des
+            fondateurs.
           </Text>
           <Text style={paragraph}>
-            We&apos;ve been working on {siteConfig.name} for the past months,
-            and during this time, we&apos;ve implemented the basic functionality
-            to get started. However, with your feedback, we can make the right
-            decisions to improve the platform.
+            Nous avons travaillé sur {siteConfig.name} ces derniers mois et,
+            pendant ce temps, nous avons mis en place les fonctionnalités de
+            base pour démarrer. Cependant, avec vos retours, nous pourrons
+            prendre les bonnes décisions pour améliorer la plateforme.
           </Text>
           <Text style={paragraph}>
-            During our private beta phase, you may encounter some bugs, but we
-            genuinely want all your feedback.
+            Pendant notre phase de bêta privée, il est possible que vous
+            rencontriez quelques bugs, mais nous souhaitons vraiment recevoir
+            tous vos retours.
           </Text>
           <Text style={paragraph}>
-            Should you have any questions, please don&apos;t hesitate to{" "}
+            Si vous avez des questions, n&apos;hésitez pas à{" "}
             <Link style={link} href={`${siteConfig.url}/contact`}>
-              contact us
+              nous contacter
             </Link>
+            .
           </Text>
-          {/*
-           * TODO: Generate mail/hero-new-user.png
-           */}
+          {/* TODO: Generate mail/hero-new-user.png */}
           <Img
             src={`${siteConfig.url}/mail/hero-new-user.png`}
             width={600}
@@ -65,21 +66,21 @@ export function EmailNewUser({ username }: { username: string }) {
           />
 
           <Text style={paragraph}>
-            Best regards, founders
+            Cordialement, les fondateurs
             <br />
-            <Text style={boldText}>Hortensia Agency</Text>
+            <Text style={boldText}>Malek & Moatez</Text>
           </Text>
 
           <Section style={btnContainer}>
             <Button style={button} href={siteConfig.url}>
-              Get started
+              Commencer
             </Button>
           </Section>
 
           <Hr style={hr} />
           <Text style={footer}>
-            <Link href="https://hortensia-agency.com">Hortensia Agency</Link>,
-            290 Centre Urbain Nord Ariana, Tunisia
+            <Link href={siteConfig.url}>{siteConfig.name}</Link>, Monastir,
+            Tunisie
           </Text>
         </Container>
       </Body>

@@ -61,10 +61,10 @@ const shuffleArray = (array: any[]) => {
   while (currentIndex !== 0) {
     randomIndex = Math.floor(Math.random() * currentIndex)
     currentIndex--
-      ;[array[currentIndex], array[randomIndex]] = [
-        array[randomIndex],
-        array[currentIndex],
-      ]
+    ;[array[currentIndex], array[randomIndex]] = [
+      array[randomIndex],
+      array[currentIndex],
+    ]
   }
   return array
 }
@@ -154,8 +154,14 @@ export function MarketingCallToAction() {
               <Icons.logoLucide className="text-primary mx-auto size-16 lg:size-24 " />
             </div>
             <div className="text-secondary-foreground z-10 mt-4 flex flex-col items-center text-center">
-              <h1 className="text-3xl font-bold lg:text-4xl">Réservez Votre Voiture Idéale Dès Maintenant              </h1>
-              <p className="mt-2">Explorez notre large sélection de véhicules, trouvez celui qui correspond parfaitement à vos besoins, et réservez en toute simplicité. Avec KarhbaGo, partez l’esprit tranquille grâce à une expérience de location sécurisée et sans tracas.
+              <h1 className="text-3xl font-bold lg:text-4xl">
+                Réservez Votre Voiture Idéale Dès Maintenant{" "}
+              </h1>
+              <p className="mt-2">
+                Explorez notre large sélection de véhicules, trouvez celui qui
+                correspond parfaitement à vos besoins, et réservez en toute
+                simplicité. Avec KarhbaGo, partez l’esprit tranquille grâce à
+                une expérience de location sécurisée et sans tracas.
               </p>
               <div className="mt-4 flex justify-center gap-4">
                 <Link

@@ -19,7 +19,8 @@ export function EmailWhitelist() {
     <Html>
       <Head />
       <Preview>
-        You have joined the whitelist for {siteConfig.name} private beta.
+        Vous avez rejoint la liste blanche pour la bêta privée de{" "}
+        {siteConfig.name}.
       </Preview>
       <Body style={main}>
         <Container style={container}>
@@ -28,12 +29,10 @@ export function EmailWhitelist() {
               src={siteConfig.images.logo}
               width="50"
               height="50"
-              alt={`${siteConfig.name} logo`}
+              alt={`Logo de ${siteConfig.name}`}
             />
             <Hr style={hr} />
-            {/*
-             * TODO: Generate mail/hero-whitelist.png
-             */}
+            {/* TODO: Generate mail/hero-whitelist.png */}
             <Img
               src={`${siteConfig.url}/mail/hero-whitelist.png`}
               width="600"
@@ -41,29 +40,30 @@ export function EmailWhitelist() {
               alt={`${siteConfig.name}`}
             />
             <Text style={paragraph}>
-              Thank you for signing up for the whitelist for {siteConfig.name}!
-              We&apos;re thrilled to have you on board and appreciate your
-              interest in what we&apos;re working on.
+              Merci de vous être inscrit à la liste blanche pour{" "}
+              {siteConfig.name} ! Nous sommes ravis de vous avoir à bord et nous
+              apprécions votre intérêt pour notre projet.
             </Text>
             <Text style={paragraph}>
-              We can&apos;t wait to share {siteConfig.name} with you and the
-              rest of our community. In the meantime, if you have any questions
-              or thoughts, feel free to reply to this email.
+              Nous avons hâte de partager {siteConfig.name} avec vous et le
+              reste de notre communauté. En attendant, si vous avez des
+              questions ou des remarques, n&apos;hésitez pas à répondre à cet
+              e-mail.
             </Text>
             <Text style={paragraph}>
-              For the latest updates you can follow us on X{" "}
+              Pour les dernières mises à jour, vous pouvez nous suivre sur X{" "}
               <Link href={siteConfig.links.twitter} style={anchor}>
                 @Stelify
               </Link>
             </Text>
             <Hr style={hr} />
             <Text style={footer}>
-              You&apos;re receiving this email because you opted-in to receive
-              updates from <Link href={siteConfig.url}>{siteConfig.name}</Link>
+              Vous recevez cet e-mail car vous avez choisi de recevoir des mises
+              à jour de <Link href={siteConfig.url}>{siteConfig.name}</Link>.
             </Text>
             <Text style={footer}>
-              <Link href="https://hortensia-agency.com">Hortensia Agency</Link>,
-              290 Centre Urbain Nord Ariana, Tunisia
+              <Link href={siteConfig.url}>{siteConfig.name}</Link>, Monastir,
+              Tunisie
             </Text>
           </Section>
         </Container>

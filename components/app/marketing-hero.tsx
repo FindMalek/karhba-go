@@ -35,9 +35,9 @@ export async function MarketingHero() {
             </span>
           </h1>
           <p className="mt-8 text-xl leading-8 text-zinc-600 dark:text-zinc-300">
-            Découvrez la facilité de location avec KarhbaGo, votre plateforme pour une expérience de réservation rapide, sécurisée et sans stress.
+            Découvrez la facilité de location avec KarhbaGo, votre plateforme
+            pour une expérience de réservation rapide, sécurisée et sans stress.
           </p>
-
 
           <div className="mx-0 flex w-full max-w-full flex-col gap-4 py-3 sm:max-w-lg sm:flex-row md:mx-auto">
             <div className="flex w-full flex-col gap-2 sm:flex-row sm:gap-4">

@@ -96,9 +96,7 @@ export function generateStaticParams() {
   return locales.map((locale) => ({ locale }))
 }
 
-export default function RootLayout({
-  children,
-}: RootLayoutProps) {
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="fr" suppressHydrationWarning>
       <head>

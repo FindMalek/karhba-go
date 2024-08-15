@@ -2,7 +2,8 @@ import { SiteConfig } from "types"
 
 export const siteConfig: SiteConfig = {
   name: "KarhbaGo",
-  description: "KarhbaGo est la plateforme idéale pour simplifier la location de voitures en Tunisie. Trouvez facilement le véhicule parfait grâce à des filtres avancés, réservez en ligne en toute sécurité, et communiquez directement avec les agences de location. Profitez d'une expérience fluide, multilingue et adaptée à vos besoins, que vous soyez un particulier ou une agence.",
+  description:
+    "KarhbaGo est la plateforme idéale pour simplifier la location de voitures en Tunisie. Trouvez facilement le véhicule parfait grâce à des filtres avancés, réservez en ligne en toute sécurité, et communiquez directement avec les agences de location. Profitez d'une expérience fluide, multilingue et adaptée à vos besoins, que vous soyez un particulier ou une agence.",
   url: "https://karhbago.findmalek.com",
   images: {
     default: "https://karhbago.findmalek.com/og.png",
@@ -17,6 +18,7 @@ export const siteConfig: SiteConfig = {
     name: "findmalek",
     url: "https://www.findmalek.com",
     email: "hi@findmalek.com",
+    github: "https://github.com/findmalek",
   },
   keywords: [
     "location de voitures",
@@ -39,7 +41,7 @@ export const siteConfig: SiteConfig = {
     "gestion de flotte de voitures",
     "avis location de voitures",
     "réservation instantanée de voitures",
-    "paiement sécurisé location de voitures", 
+    "paiement sécurisé location de voitures",
   ],
 }
 

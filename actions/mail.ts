@@ -23,6 +23,7 @@ export async function sendMail(
   body: MagicLinkData | WaitlistData | NewUserData
 ) {
   const mailTransporter = nodemailer.createTransport({
+    service: "gmail",
     host: env.SMTP_SERVER,
     port: env.SMTP_PORT,
     auth: {
@@ -38,7 +39,7 @@ export async function sendMail(
       mailOptions = {
         from: `${siteConfig.name} <${env.FROM_EMAIL}>`,
         to: (body as MagicLinkData).email,
-        subject: `Your magic link to ${siteConfig.name}`,
+        subject: `Votre Magic Link et OTP code ${siteConfig.name}`,
         html,
       }
       break
@@ -48,7 +49,7 @@ export async function sendMail(
       mailOptions = {
         from: `${siteConfig.name} <${env.FROM_EMAIL}>`,
         to: (body as WaitlistData).email,
-        subject: `You're invited to join ${siteConfig.name} private beta`,
+        subject: `Vous êtes invité à rejoindre la version bêta privée de ${siteConfig.name}`,
         html,
       }
       break
@@ -60,7 +61,7 @@ export async function sendMail(
       mailOptions = {
         from: `${siteConfig.name} <${env.FROM_EMAIL}>`,
         to: (body as NewUserData).email,
-        subject: `Welcome to ${siteConfig.name}`,
+        subject: `Bienvenu to ${siteConfig.name}`,
         html,
       }
       break

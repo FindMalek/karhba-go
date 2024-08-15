@@ -25,8 +25,7 @@ export async function generateMetadata({
   params,
 }): Promise<Metadata | undefined> {
   const post = allPosts.find(
-    (about) =>
-      about.slugAsParams === `post/${params.name}`
+    (about) => about.slugAsParams === `post/${params.name}`
   )
 
   if (!post) {
@@ -67,11 +66,9 @@ export async function generateMetadata({
 export default async function Page({
   params: { name },
 }: {
-  params: { name: string; }
+  params: { name: string }
 }) {
-  const post = allPosts.find(
-    (about) =>
-      about.slugAsParams === `post/${name}`)
+  const post = allPosts.find((about) => about.slugAsParams === `post/${name}`)
 
   if (!post) {
     notFound()

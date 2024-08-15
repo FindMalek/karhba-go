@@ -44,6 +44,7 @@ export type SiteConfig = {
     name: string
     url: string
     email: string
+    github: string
   }
   keywords: string[]
 }

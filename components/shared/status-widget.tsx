@@ -1,4 +1,5 @@
 import { getStatus } from "@openstatus/react"
+
 import { cn } from "@/lib/utils"
 
 export async function StatusWidget() {

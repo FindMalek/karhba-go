@@ -18,7 +18,8 @@ export async function MarketingFAQs() {
             Questions fréquemment posées
           </h2>
           <p className="text-secondary-foreground mt-6 text-xl leading-8">
-            Besoin d&apos;aide pour quelque chose ? Voici quelques-unes des questions les plus courantes que nous recevons.
+            Besoin d&apos;aide pour quelque chose ? Voici quelques-unes des
+            questions les plus courantes que nous recevons.
           </p>
         </div>
         <div className="container mx-auto my-12 max-w-[600px] space-y-12">

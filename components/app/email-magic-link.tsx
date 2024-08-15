@@ -23,7 +23,8 @@ export function EmailMagicLink({ magicLink }: { magicLink: MagicLinkData }) {
     <Html>
       <Head />
       <Preview>
-        Confirm your e-mail for {siteConfig.name} by clicking the button below.
+        Confirmez votre e-mail pour {siteConfig.name} en cliquant sur le bouton
+        ci-dessous.
       </Preview>
       <Body style={main}>
         <Container style={container}>
@@ -34,18 +35,18 @@ export function EmailMagicLink({ magicLink }: { magicLink: MagicLinkData }) {
             style={logo}
           />
           <Heading style={heading}>
-            Your login code for {siteConfig.name}
+            Votre code de connexion pour {siteConfig.name}
           </Heading>
           <Section style={buttonContainer}>
             <Button style={button} href={`${magicLink.otp_link}`}>
-              Login to {siteConfig.name}
+              Connexion à {siteConfig.name}
             </Button>
           </Section>
 
           <Text style={paragraph}>
-            This link and code will only be valid for the next 5 minutes. If the
-            link does not work, you can use the login verification code
-            directly:
+            Ce lien et ce code ne seront valides que pendant les 5 prochaines
+            minutes. Si le lien ne fonctionne pas, vous pouvez utiliser le code
+            de vérification de connexion directement :
           </Text>
 
           <Section style={codeBox}>
@@ -101,7 +102,7 @@ const buttonContainer = {
 }
 
 const button = {
-  backgroundColor: "#73cb6b",
+  backgroundColor: "#ff0000",
   borderRadius: "3px",
   fontWeight: "600",
   color: "#fff",
