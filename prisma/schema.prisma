@@ -34,13 +34,32 @@ enum PaymentStatus {
   PENDING
   COMPLETED
   FAILED
-  CANCELED
 }
 
 enum BookingStatus {
-  INPROGRESS
+  BOOKED
   COMPLETED
   CANCELED
+}
+
+enum VehicleType {
+  SEDAN
+  SUV
+  HATCHBACK
+  COUPE
+  CONVERTIBLE
+  MINIVAN
+  TRUCK
+  VAN
+  OTHER
+}
+
+enum AvailabilityStatus {
+  AVAILABLE
+  BOOKED
+  MAINTENANCE
+  UNAVAILABLE
+  OTHER
 }
 
 model Account {
@@ -141,7 +160,7 @@ model Agency {
   rentalTerms    RentalTerm[]
   reviews        Review[]
   contactDetails ContactDetail[]
-  Booking   Booking[]
+  Booking        Booking[]
 
   userId String
   user   User   @relation(fields: [userId], references: [id])
@@ -152,8 +171,10 @@ model Agency {
 }
 
 model Client {
-  id    String  @id @default(cuid())
+  id String @id @default(cuid())
+
   phone String?
+  bio   String?
 
   bookings Booking[]
   reviews  Review[]
@@ -166,22 +187,36 @@ model Client {
   createdAt DateTime  @default(now()) @db.Timestamp(6)
 }
 
-// Vehicle Model
 model Vehicle {
-  id              String  @id @default(cuid())
+  id          String  @id @default(cuid())
+  price       Float
+  description String?
 
-  make            String?
-  model           String?
-  year            Int?
-  mileage         Int?
-  fuelType        String?
-  transmission    String?
-  specialFeatures String?
-  category        String?
+  make         String
+  model        String
+  year         Int?
+  mileage      Int?
+  transmission String?
 
-  vehiclePricing      VehiclePricing[]
-  vehicleAvailability VehicleAvailability[]
+  category VehicleType
+
+  fuelType   String?
+  kmPerLitre Float?
+
+  numSeats Int?
+  numDoors Int?
+
+  features String[]
+  extras   String[]
+
+  maxRentalDays Int?
+  minRentalDays Int? @default(1)
+
+  extraChargePerKm       Float?
+  mileageAllowancePerDay Int?
+
   bookings            Booking[]
+  vehicleAvailability VehicleAvailability[]
 
   agencyId String
   agency   Agency @relation(fields: [agencyId], references: [id])
@@ -191,29 +226,27 @@ model Vehicle {
   createdAt DateTime  @default(now()) @db.Timestamp(6)
 }
 
-// VehiclePricing Model
-model VehiclePricing {
-  id             String   @id @default(cuid())
-  vehicleId      String
-  pricePerDay    Float?
-  pricePerWeek   Float?
-  pricePerMonth  Float?
-  dynamicPricing Boolean?
-  createdAt      DateTime @default(now()) @db.Timestamp(6)
+model VehicleAvailability {
+  id        String   @id @default(cuid())
+  status    AvailabilityStatus?
 
+  startDate DateTime
+  endDate   DateTime
+
+  createdAt DateTime @default(now()) @db.Timestamp(6)
+
+  vehicleId String
   vehicle Vehicle @relation(fields: [vehicleId], references: [id])
 }
 
-// VehicleAvailability Model
-model VehicleAvailability {
-  id        String   @id @default(cuid())
-  vehicleId String
-  startDate DateTime
-  endDate   DateTime
-  status    String?
-  createdAt DateTime @default(now()) @db.Timestamp(6)
+model FrequentlyAskedQuestions {
+  id String @id @default(cuid())
 
-  vehicle Vehicle @relation(fields: [vehicleId], references: [id])
+  question String
+  answer   String
+
+  rentalTermId String?
+  RentalTerm   RentalTerm? @relation(fields: [rentalTermId], references: [id])
 }
 
 // RentalTerm Model
@@ -224,8 +257,11 @@ model RentalTerm {
   ageRequirement    Int
   insuranceCoverage String
 
-  deposit         Int
+  deposit         Int @default(0)
   depositRequired Boolean
+
+  guidlines String[]
+  faqs      FrequentlyAskedQuestions[]
 
   agencyId String
   agency   Agency @relation(fields: [agencyId], references: [id])
@@ -243,7 +279,8 @@ model Booking {
   insuranceCoverage String?
   pickUpLocation    String
   depositRequired   Boolean
-  payments          Payment[]
+
+  payments Payment[]
 
   clientId  String
   client    Client  @relation(fields: [clientId], references: [id])
@@ -261,9 +298,9 @@ model Payment {
   id     String @id @default(cuid())
   amount Float
 
-  paymentReference String?
-  paymentMethod    PaymentMethod
-  paymentStatus    PaymentStatus?
+  reference String?
+  method    PaymentMethod
+  status    PaymentStatus?
 
   paymentDate DateTime
   createdAt   DateTime @default(now()) @db.Timestamp(6)
@@ -272,7 +309,6 @@ model Payment {
   booking   Booking @relation(fields: [bookingId], references: [id])
 }
 
-// Review Model
 model Review {
   id String @id @default(cuid())
 
