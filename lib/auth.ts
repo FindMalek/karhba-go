@@ -1,5 +1,5 @@
-import { PrismaAdapter } from "@next-auth/prisma-adapter"
-import { NextAuthOptions } from "next-auth"
+import { PrismaAdapter } from "@auth/prisma-adapter"
+import NextAuth from "next-auth"
 import { JWT } from "next-auth/jwt"
 import EmailProvider from "next-auth/providers/email"
 import FacebookProvider from "next-auth/providers/facebook"
@@ -13,8 +13,8 @@ import { sendMail } from "@/actions/mail"
 import { updateVerificationToken } from "@/actions/token"
 import { isBanned } from "@/actions/user"
 
-export const authOptions: NextAuthOptions = {
-  adapter: PrismaAdapter(db as any),
+export const { handlers, signIn, signOut, auth } = NextAuth({
+  adapter: PrismaAdapter(db),
   secret: env.NEXTAUTH_SECRET,
   session: {
     strategy: "jwt",
@@ -64,12 +64,10 @@ export const authOptions: NextAuthOptions = {
 
       if (token && dbUser) {
         session.user.id = dbUser.id
-        session.user.username = dbUser.username
         session.user.first_name = dbUser.first_name
         session.user.last_name = dbUser.last_name
         session.user.verified = dbUser.verified
         session.user.email = dbUser.email
-        session.user.role = dbUser.role
         session.user.image = dbUser.image
         session.user.deletedAt = dbUser.deletedAt
       }
@@ -87,14 +85,18 @@ export const authOptions: NextAuthOptions = {
         if (dbUser) {
           return {
             id: dbUser.id,
-            username: dbUser.username,
+
             first_name: dbUser.first_name,
             last_name: dbUser.last_name,
             image: dbUser.image,
             email: dbUser.email,
-            role: dbUser.role,
+            phone: dbUser.phone,
+
+            type: dbUser.type,
+
             verified: dbUser.verified,
             emailVerified: dbUser.emailVerified,
+
             deletedAt: dbUser.deletedAt,
             createdAt: dbUser.createdAt,
             updatedAt: dbUser.updatedAt,
@@ -107,4 +109,4 @@ export const authOptions: NextAuthOptions = {
       return token
     },
   },
-}
+})

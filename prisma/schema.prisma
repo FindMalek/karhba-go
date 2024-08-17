@@ -63,39 +63,39 @@ enum AvailabilityStatus {
 }
 
 model Account {
-  id String @id @default(cuid())
+  userId String
 
-  userId            String @map("user_id")
-  providerAccountId String @map("provider_account_id")
+  type              String
+  provider          String
+  providerAccountId String
 
-  type     String
-  provider String
+  refresh_token String?
+  access_token  String?
+  expires_at    Int?
 
-  token_type    String?
-  scope         String?
+  token_type String?
+  scope      String?
+  id_token   String?
+
   session_state String?
 
-  refresh_token String? @db.Text
-  access_token  String? @db.Text
-  id_token      String? @db.Text
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
-  expires_at Int?
-  user       User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-  @@unique([provider, providerAccountId])
-  @@map("accounts")
+  @@id([provider, providerAccountId])
 }
 
 model Session {
-  id String @id @default(cuid())
+  sessionToken String @unique
 
-  sessionToken String   @unique @map("session_token")
-  expires      DateTime
-
-  userId String @map("user_id")
+  userId String
   user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-  @@map("sessions")
+  expires   DateTime
+  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
 }
 
 model User {
@@ -117,11 +117,11 @@ model User {
   accounts Account[]
   sessions Session[]
 
+  Authenticator Authenticator[]
+
   deletedAt DateTime?
   updatedAt DateTime  @updatedAt
   createdAt DateTime  @default(now())
-
-  @@map("users")
 }
 
 model VerificationToken {
@@ -133,8 +133,24 @@ model VerificationToken {
   passCode        String?
   verificationUrl String?
 
-  @@unique([identifier, token])
-  @@map(name: "verificationtokens")
+  @@id([identifier, token])
+}
+
+model Authenticator {
+  credentialID String @unique
+
+  providerAccountId    String
+  credentialPublicKey  String
+  credentialDeviceType String
+  transports           String?
+
+  counter            Int
+  credentialBackedUp Boolean
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([userId, credentialID])
 }
 
 model ContactDetail {
@@ -228,8 +244,8 @@ model Vehicle {
 }
 
 model VehicleAvailability {
-  id        String   @id @default(cuid())
-  status    AvailabilityStatus?
+  id     String              @id @default(cuid())
+  status AvailabilityStatus?
 
   startDate DateTime
   endDate   DateTime
@@ -237,7 +253,7 @@ model VehicleAvailability {
   createdAt DateTime @default(now()) @db.Timestamp(6)
 
   vehicleId String
-  vehicle Vehicle @relation(fields: [vehicleId], references: [id])
+  vehicle   Vehicle @relation(fields: [vehicleId], references: [id])
 }
 
 model FrequentlyAskedQuestions {
@@ -258,7 +274,7 @@ model RentalTerm {
   ageRequirement    Int
   insuranceCoverage String
 
-  deposit         Int @default(0)
+  deposit         Int     @default(0)
   depositRequired Boolean
 
   guidlines String[]
