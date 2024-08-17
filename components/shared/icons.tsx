@@ -139,5 +139,5 @@ export const Icons = {
   toggleRight: ToggleRightIcon,
   facebook: FaFacebook,
   google: FaGoogle,
-  circle: CircleIcon
+  circle: CircleIcon,
 }
