@@ -1,8 +1,4 @@
-import type { Config } from "tailwindcss";
-
-
-
-
+import type { Config } from "tailwindcss"
 
 const {
   default: flattenColorPalette,

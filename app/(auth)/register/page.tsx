@@ -4,7 +4,7 @@ import { redirect } from "next/navigation"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 
-import { AuthUserEmail } from "@/components/app/auth-user-email"
+import { AuthRegister } from "@/components/app/auth-register"
 import { Icons } from "@/components/shared/icons"
 import { buttonVariants } from "@/components/ui/button"
 
@@ -62,13 +62,10 @@ export default async function RegisterPage() {
 
           <div className="flex flex-col space-y-2 text-center">
             <h1 className="text-2xl font-semibold tracking-tight">
-              Créer un compte
+              Créer Votre Compte {siteConfig.name}
             </h1>
-            <p className="text-muted-foreground text-sm">
-              Créez un compte pour accéder à toutes les fonctionnalités.
-            </p>
 
-            <AuthUserEmail type="register" />
+            <AuthRegister />
           </div>
 
           <p className="text-muted-foreground px-8 text-center text-sm">

@@ -48,7 +48,7 @@ export default async function LoginPage() {
             Connectez-vous pour accéder à toutes les fonctionnalités.
           </p>
 
-          <AuthUserEmail type="login" />
+          <AuthUserEmail />
         </div>
 
         <p className="text-muted-foreground px-8 text-center text-sm">
