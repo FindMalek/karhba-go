@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "next dev",
     "generate": "contentlayer build && prisma generate && prisma db push",
-    "build": "pnpm run generate && next build",
+    "build": "pnpm contentlayer build && prisma generate && next build",
     "turbo": "next dev --turbo",
     "start": "next start",
     "lint": "next lint",

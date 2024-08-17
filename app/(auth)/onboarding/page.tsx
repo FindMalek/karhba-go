@@ -4,8 +4,8 @@ import { redirect } from "next/navigation"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 
-import { AuthOnboarding } from "@/components/app/auth-onboarding-form"
-import { Icons } from "@/components/shared/icons"
+/* import { AuthOnboarding } from "@/components/app/auth-onboarding-form"
+ */import { Icons } from "@/components/shared/icons"
 import { buttonVariants } from "@/components/ui/button"
 
 import { getAuthedUser } from "@/actions/session"
@@ -60,7 +60,7 @@ export default async function OnboardingPage() {
               Finalisez votre inscription pour accéder à toutes les
               fonctionnalités.
             </p>
-            <AuthOnboarding user={user} />
+            {/* <AuthOnboarding user={user} /> */}
           </div>
         </div>
       </div>
