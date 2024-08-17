@@ -103,8 +103,9 @@ model User {
 
   first_name String?
   last_name  String?
-  image      String  @default("https://karhbago.findmalek.com/placeholder.svg")
+  image      String  @default("https://karhba-go.findmalek.com/placeholder.svg")
   email      String  @unique
+  phone      String? @unique
 
   verified      Boolean   @default(false)
   emailVerified DateTime? @map("email_verified")

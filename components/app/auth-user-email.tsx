@@ -31,7 +31,6 @@ interface AuthUserEmailProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export function AuthUserEmail({
   type,
-  className,
   ...props
 }: AuthUserEmailProps) {
   const router = useRouter()
@@ -81,7 +80,7 @@ export function AuthUserEmail({
 
   return (
     <Form {...form}>
-      <div className={cn("grid gap-6", className)} {...props}>
+      <div className={"grid gap-6", } {...props}>
         <form onSubmit={form.handleSubmit(onSubmit)}>
           <div className="grid gap-2">
             <div className="grid gap-1">
