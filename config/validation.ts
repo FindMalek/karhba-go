@@ -1,4 +1,4 @@
-import { CourseLevel, Role } from "@prisma/client"
+import { UserType } from "@prisma/client"
 import { z } from "zod"
 
 export const waitlistSchema = z.object({
@@ -28,8 +28,14 @@ export const authOnboardingSchema = z.object({
   last_name: z.string().min(3, {
     message: "Votre prénom est requis",
   }),
-  role: z.nativeEnum(Role),
   terms: z.boolean().refine((value) => value === true, {
     message: "Vous devez accepter les conditions d'utilisation",
+  }),
+})
+
+export const authRegisterSchema = z.object({
+  type: z.nativeEnum(UserType),
+  name: z.string().min(3, {
+    message: "Votre nom est requis",
   }),
 })

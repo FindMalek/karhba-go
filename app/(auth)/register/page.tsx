@@ -67,24 +67,6 @@ export default async function RegisterPage() {
 
             <AuthRegister />
           </div>
-
-          <p className="text-muted-foreground px-8 text-center text-sm">
-            En continuant, vous acceptez les{" "}
-            <Link
-              href="/post/terms"
-              className="hover:text-primary underline underline-offset-4"
-            >
-              les conditions d&apos;utilisation
-            </Link>{" "}
-            et la{" "}
-            <Link
-              href="/post/privacy"
-              className="hover:text-primary underline underline-offset-4"
-            >
-              politique de confidentialité
-            </Link>
-            .
-          </p>
         </div>
       </div>
     </div>
