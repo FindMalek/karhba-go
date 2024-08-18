@@ -196,6 +196,9 @@ importers:
       react-parallax-tilt:
         specifier: ^1.7.232
         version: 1.7.236(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react-phone-number-input:
+        specifier: ^3.4.5
+        version: 3.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-resizable-panels:
         specifier: ^2.0.20
         version: 2.0.23(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -5733,6 +5736,12 @@ packages:
         integrity: sha512-jFI8IQw4hczaL4ALINxqLEXQbWcNjoSkloa4IaufXCJr6QawJyw7tuRysRsrE8w2p/4gGaxKIt/hX3qz/IbD1A==,
       }
 
+  classnames@2.5.1:
+    resolution:
+      {
+        integrity: sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow==,
+      }
+
   cli-cursor@3.1.0:
     resolution:
       {
@@ -6059,6 +6068,12 @@ packages:
         integrity: sha512-H65gsXo1SKjf8zmrJ67eJk8aIRKV5ff2D4uKZIBZShbhGSpEmsQOPW/SKMKYhSTrqR7ufy6RP69rPogdaPh/kA==,
       }
     engines: { node: ">=4" }
+
+  country-flag-icons@1.5.13:
+    resolution:
+      {
+        integrity: sha512-4JwHNqaKZ19doQoNcBjsoYA+I7NqCH/mC/6f5cBWvdKzcK5TMmzLpq3Z/syVHMHJuDGFwJ+rPpGizvrqJybJow==,
+      }
 
   create-require@1.1.1:
     resolution:
@@ -7822,6 +7837,12 @@ packages:
         integrity: sha512-7NXolsK4CAS5+xvdj5OMMbI962hU/wvwoxk+LWR9Ek9bVtyuuYScDN6eS0rUm6TxApFpw7CX1o4uJzcd4AyD3Q==,
       }
 
+  input-format@0.3.10:
+    resolution:
+      {
+        integrity: sha512-5cFv/kOZD7Ch0viprVkuYPDkAU7HBZYBx8QrIpQ6yXUWbAQ0+RQ8IIojDJOf/RO6FDJLL099HDSK2KoVZ2zevg==,
+      }
+
   input-otp@1.2.4:
     resolution:
       {
@@ -8565,6 +8586,12 @@ packages:
         integrity: sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ==,
       }
     engines: { node: ">= 0.8.0" }
+
+  libphonenumber-js@1.11.7:
+    resolution:
+      {
+        integrity: sha512-x2xON4/Qg2bRIS11KIN9yCNYUjhtiEjNyptjX0mX+pyKHecxuJVLIpfX1lq9ZD6CrC/rB+y4GBi18c6CEcUR+A==,
+      }
 
   lighthouse-logger@1.4.2:
     resolution:
@@ -10598,6 +10625,15 @@ packages:
     peerDependencies:
       react: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
       react-dom: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
+
+  react-phone-number-input@3.4.5:
+    resolution:
+      {
+        integrity: sha512-IlLTG0F/2P+72drqGNiYaguV3KOD4EVxQWGJ7YSofbOb6vyCWWLJqQIQsFFNpfrMrXzYtB3G+aHL9tprGfisFw==,
+      }
+    peerDependencies:
+      react: ">=16.8"
+      react-dom: ">=16.8"
 
   react-promise-suspense@0.3.4:
     resolution:
@@ -16796,6 +16832,8 @@ snapshots:
     dependencies:
       clsx: 2.0.0
 
+  classnames@2.5.1: {}
+
   cli-cursor@3.1.0:
     dependencies:
       restore-cursor: 3.1.0
@@ -16985,6 +17023,8 @@ snapshots:
       is-directory: 0.3.1
       js-yaml: 3.14.1
       parse-json: 4.0.0
+
+  country-flag-icons@1.5.13: {}
 
   create-require@1.1.1: {}
 
@@ -18255,6 +18295,10 @@ snapshots:
 
   inline-style-parser@0.1.1: {}
 
+  input-format@0.3.10:
+    dependencies:
+      prop-types: 15.8.1
+
   input-otp@1.2.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       react: 18.3.1
@@ -18659,6 +18703,8 @@ snapshots:
     dependencies:
       prelude-ls: 1.2.1
       type-check: 0.4.0
+
+  libphonenumber-js@1.11.7: {}
 
   lighthouse-logger@1.4.2:
     dependencies:
@@ -20333,6 +20379,16 @@ snapshots:
 
   react-parallax-tilt@1.7.236(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
+  react-phone-number-input@3.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+    dependencies:
+      classnames: 2.5.1
+      country-flag-icons: 1.5.13
+      input-format: 0.3.10
+      libphonenumber-js: 1.11.7
+      prop-types: 15.8.1
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 

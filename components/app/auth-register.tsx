@@ -11,6 +11,8 @@ import { z } from "zod"
 import { authRegisterSchema } from "@/config/validation"
 import { cn } from "@/lib/utils"
 
+import { AuthEmail } from "@/components/app/auth-email"
+import { AuthPhoneNumber } from "@/components/app/auth-phone-number"
 import { AuthRegisterProviders } from "@/components/app/auth-register-providers"
 import { Icons } from "@/components/shared/icons"
 import { Button } from "@/components/ui/button"
@@ -42,12 +44,18 @@ export function AuthRegister() {
 
   async function onSubmit(data: z.infer<typeof authRegisterSchema>) {
     setDetails(data)
+
+    console.log(data)
   }
 
   return (
     <Form {...form}>
       {details.type ? (
-        <AuthRegisterProviders />
+        <div className="flex w-full flex-col gap-4 space-y-8 pt-4">
+          <AuthPhoneNumber />
+          <AuthEmail />
+          <AuthRegisterProviders />
+        </div>
       ) : (
         <form
           className="flex w-full flex-col gap-4 space-y-8"
@@ -137,7 +145,8 @@ export function AuthRegister() {
             type="submit"
             className={cn(
               "w-full",
-              !form.formState.isValid && "bg-secondary cursor-not-allowed"
+              !form.formState.isValid &&
+                "bg-secondary-foreground text-secondary cursor-not-allowed"
             )}
             disabled={!form.formState.isValid}
           >

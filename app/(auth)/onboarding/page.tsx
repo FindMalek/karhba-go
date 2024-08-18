@@ -5,7 +5,8 @@ import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 
 /* import { AuthOnboarding } from "@/components/app/auth-onboarding-form"
- */import { Icons } from "@/components/shared/icons"
+ */
+import { Icons } from "@/components/shared/icons"
 import { buttonVariants } from "@/components/ui/button"
 
 import { getAuthedUser } from "@/actions/session"

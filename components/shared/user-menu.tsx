@@ -23,9 +23,7 @@ export function UserMenu({
     <DropdownMenu>
       <DropdownMenuTrigger asChild>{children}</DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="min-w-[250px]">
-        <DropdownMenuLabel>
-          {user.name} 
-        </DropdownMenuLabel>
+        <DropdownMenuLabel>{user.name}</DropdownMenuLabel>
         <p className="text-muted-foreground px-2 text-sm">{user.email}</p>
         <RoleBadge role={user.type} />
         <UserDropdown />
@@ -48,9 +46,7 @@ export function UserMenuIconDropdown({ user }: { user: User }) {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="min-w-[250px]">
-        <DropdownMenuLabel>
-          {user.name} 
-        </DropdownMenuLabel>
+        <DropdownMenuLabel>{user.name}</DropdownMenuLabel>
         <p className="text-muted-foreground px-2 text-sm">{user.email}</p>
         <RoleBadge role={user.type} />
         <UserDropdown />
