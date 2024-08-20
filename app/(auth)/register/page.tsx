@@ -66,6 +66,19 @@ export default async function RegisterPage() {
             </h1>
 
             <AuthRegister />
+            <p className="text-secondary-foreground/65 text-xs">
+              En cliquant sur Continuer, vous reconnaissez avoir lu et accepté
+              les{" "}
+              <a href="/post/terms" className="underline">
+                Conditions de Service
+              </a>{" "}
+              et la{" "}
+              <a href="/post/policy" className="underline">
+                {" "}
+                Politique de confidentialité
+              </a>{" "}
+              de {siteConfig.name}.
+            </p>
           </div>
         </div>
       </div>

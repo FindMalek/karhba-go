@@ -8,6 +8,7 @@ import { signIn } from "next-auth/react"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 
+import { siteConfig } from "@/config/site"
 import { authRegisterSchema } from "@/config/validation"
 import { cn } from "@/lib/utils"
 
@@ -15,6 +16,12 @@ import { AuthEmail } from "@/components/app/auth-email"
 import { AuthPhoneNumber } from "@/components/app/auth-phone-number"
 import { AuthRegisterProviders } from "@/components/app/auth-register-providers"
 import { Icons } from "@/components/shared/icons"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button"
 import {
   Form,
@@ -27,6 +34,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+import { Separator } from "@/components/ui/separator"
 
 export function AuthRegister() {
   const router = useRouter()
@@ -52,9 +60,23 @@ export function AuthRegister() {
     <Form {...form}>
       {details.type ? (
         <div className="flex w-full flex-col gap-4 space-y-8 pt-4">
-          <AuthPhoneNumber />
-          <AuthEmail />
-          <AuthRegisterProviders />
+          <div className="pointer-events-auto my-6 flex flex-col">
+            <AuthPhoneNumber />
+            <Accordion type="single" collapsible className="mt-6 border-t pt-2">
+              <AccordionItem value="item-1" className="border-0">
+                <AccordionTrigger className="flex justify-center space-x-2 text-sm">
+                  <span>Plus d&apos;options de connexion ? </span>
+                </AccordionTrigger>
+                <AccordionContent className="mt-4">
+                  <div className="flex flex-col space-y-4">
+                    <AuthEmail />
+                    <Separator />
+                    <AuthRegisterProviders />
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
         </div>
       ) : (
         <form
@@ -74,22 +96,22 @@ export function AuthRegister() {
                   >
                     <FormItem className="flex items-center space-x-3 space-y-0">
                       <FormControl>
-                        <Label className="hover:bg-secondary [&:has(:checked)]:border-primary relative flex w-full cursor-pointer flex-col justify-center rounded-lg border p-6 transition-all duration-300">
+                        <Label className="relative flex w-full cursor-pointer flex-col justify-center rounded-lg border p-6 transition-all duration-300 hover:bg-secondary [&:has(:checked)]:border-primary">
                           <RadioGroupItem
                             value={UserType.CLIENT}
                             className="peer sr-only"
                           />
                           <div className="space-y-1 text-left">
                             <h4 className="font-medium">Locataire</h4>
-                            <p className="text-muted-foreground text-sm">
+                            <p className="text-sm text-muted-foreground">
                               Je veux louer une voiture
                             </p>
                           </div>
                           <div className="absolute right-2 top-2 rounded-full p-1">
                             {form.watch("type") === UserType.CLIENT ? (
-                              <Icons.circleCheck className="text-primary size-4" />
+                              <Icons.circleCheck className="size-4 text-primary" />
                             ) : (
-                              <Icons.circle className="text-muted size-4" />
+                              <Icons.circle className="size-4 text-muted" />
                             )}
                           </div>
                         </Label>
@@ -97,22 +119,22 @@ export function AuthRegister() {
                     </FormItem>
                     <FormItem className="flex items-center space-x-3 space-y-0">
                       <FormControl>
-                        <Label className="hover:bg-secondary [&:has(:checked)]:border-primary relative flex w-full cursor-pointer flex-col justify-center rounded-lg border p-6 transition-all duration-300">
+                        <Label className="relative flex w-full cursor-pointer flex-col justify-center rounded-lg border p-6 transition-all duration-300 hover:bg-secondary [&:has(:checked)]:border-primary">
                           <RadioGroupItem
                             value={UserType.AGENCY}
                             className="peer sr-only"
                           />
                           <div className="space-y-1 text-left">
                             <h4 className="font-medium">Agence</h4>
-                            <p className="text-muted-foreground text-sm">
+                            <p className="text-sm text-muted-foreground">
                               Je veux gérer et louer des véhicules
                             </p>
                           </div>
                           <div className="absolute right-2 top-2 rounded-full p-1">
                             {form.watch("type") === UserType.AGENCY ? (
-                              <Icons.circleCheck className="text-primary size-4" />
+                              <Icons.circleCheck className="size-4 text-primary" />
                             ) : (
-                              <Icons.circle className="text-muted size-4" />
+                              <Icons.circle className="size-4 text-muted" />
                             )}
                           </div>
                         </Label>
@@ -146,7 +168,7 @@ export function AuthRegister() {
             className={cn(
               "w-full",
               !form.formState.isValid &&
-                "bg-secondary-foreground text-secondary cursor-not-allowed"
+                "cursor-not-allowed bg-secondary-foreground text-secondary"
             )}
             disabled={!form.formState.isValid}
           >
