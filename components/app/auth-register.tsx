@@ -65,7 +65,7 @@ export function AuthRegister() {
             <Accordion type="single" collapsible className="mt-6 border-t pt-2">
               <AccordionItem value="item-1" className="border-0">
                 <AccordionTrigger className="flex justify-center space-x-2 text-sm">
-                  <span>Plus d&apos;options de connexion ? </span>
+                  <span>Plus d&apos;options de connexion</span>
                 </AccordionTrigger>
                 <AccordionContent className="mt-4">
                   <div className="flex flex-col space-y-4">
@@ -96,22 +96,22 @@ export function AuthRegister() {
                   >
                     <FormItem className="flex items-center space-x-3 space-y-0">
                       <FormControl>
-                        <Label className="relative flex w-full cursor-pointer flex-col justify-center rounded-lg border p-6 transition-all duration-300 hover:bg-secondary [&:has(:checked)]:border-primary">
+                        <Label className="hover:bg-secondary [&:has(:checked)]:border-primary relative flex w-full cursor-pointer flex-col justify-center rounded-lg border p-6 transition-all duration-300">
                           <RadioGroupItem
                             value={UserType.CLIENT}
                             className="peer sr-only"
                           />
                           <div className="space-y-1 text-left">
                             <h4 className="font-medium">Locataire</h4>
-                            <p className="text-sm text-muted-foreground">
+                            <p className="text-muted-foreground text-sm">
                               Je veux louer une voiture
                             </p>
                           </div>
                           <div className="absolute right-2 top-2 rounded-full p-1">
                             {form.watch("type") === UserType.CLIENT ? (
-                              <Icons.circleCheck className="size-4 text-primary" />
+                              <Icons.circleCheck className="text-primary size-4" />
                             ) : (
-                              <Icons.circle className="size-4 text-muted" />
+                              <Icons.circle className="text-muted size-4" />
                             )}
                           </div>
                         </Label>
@@ -119,22 +119,22 @@ export function AuthRegister() {
                     </FormItem>
                     <FormItem className="flex items-center space-x-3 space-y-0">
                       <FormControl>
-                        <Label className="relative flex w-full cursor-pointer flex-col justify-center rounded-lg border p-6 transition-all duration-300 hover:bg-secondary [&:has(:checked)]:border-primary">
+                        <Label className="hover:bg-secondary [&:has(:checked)]:border-primary relative flex w-full cursor-pointer flex-col justify-center rounded-lg border p-6 transition-all duration-300">
                           <RadioGroupItem
                             value={UserType.AGENCY}
                             className="peer sr-only"
                           />
                           <div className="space-y-1 text-left">
                             <h4 className="font-medium">Agence</h4>
-                            <p className="text-sm text-muted-foreground">
+                            <p className="text-muted-foreground text-sm">
                               Je veux gérer et louer des véhicules
                             </p>
                           </div>
                           <div className="absolute right-2 top-2 rounded-full p-1">
                             {form.watch("type") === UserType.AGENCY ? (
-                              <Icons.circleCheck className="size-4 text-primary" />
+                              <Icons.circleCheck className="text-primary size-4" />
                             ) : (
-                              <Icons.circle className="size-4 text-muted" />
+                              <Icons.circle className="text-muted size-4" />
                             )}
                           </div>
                         </Label>
@@ -168,7 +168,7 @@ export function AuthRegister() {
             className={cn(
               "w-full",
               !form.formState.isValid &&
-                "cursor-not-allowed bg-secondary-foreground text-secondary"
+                "bg-secondary-foreground text-secondary cursor-not-allowed"
             )}
             disabled={!form.formState.isValid}
           >
