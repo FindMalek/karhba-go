@@ -5,6 +5,8 @@ import { useLogSnag } from "@logsnag/next"
 import { signIn } from "next-auth/react"
 import { useFormStatus } from "react-dom"
 
+import { AuthDetailsType } from "@/types/auth"
+
 import { LogEvents } from "@/config/events"
 import { siteConfig } from "@/config/site"
 
@@ -32,7 +34,7 @@ function SubmitButton() {
   )
 }
 
-export function AuthEmail() {
+export function AuthEmail({ data }: { data: AuthDetailsType }) {
   const { track } = useLogSnag()
 
   return (
@@ -51,6 +53,12 @@ export function AuthEmail() {
               tags: {
                 email,
               },
+            })
+
+            await signIn("email", {
+              email: email.toLowerCase(),
+              redirect: false,
+              callbackUrl: `/onboarding?name=${encodeURIComponent(data.name)}&type=${encodeURIComponent(data.type)}`,
             })
           }}
         >

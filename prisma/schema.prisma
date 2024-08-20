@@ -102,7 +102,7 @@ model Session {
 model User {
   id String @id @default(cuid())
 
-  name       String
+  name       String?
   image      String  @default("https://karhba-go.findmalek.com/placeholder.svg")
   email      String  @unique
   phone      String? @unique
