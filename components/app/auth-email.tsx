@@ -1,0 +1,73 @@
+"use client"
+
+import React from "react"
+import { useLogSnag } from "@logsnag/next"
+import { signIn } from "next-auth/react"
+import { useFormStatus } from "react-dom"
+
+import { LogEvents } from "@/config/events"
+import { siteConfig } from "@/config/site"
+
+import { Icons } from "@/components/shared/icons"
+import { Input } from "@/components/ui/input"
+
+function SubmitButton() {
+  const { pending } = useFormStatus()
+
+  if (pending) {
+    return (
+      <div className="absolute right-0 top-1">
+        <Icons.spinner className="absolute right-2 top-2.5 mr-3 size-4 animate-spin text-base" />
+      </div>
+    )
+  }
+
+  return (
+    <button
+      type="submit"
+      className="bg-primary text-primary-foreground absolute right-2 top-2 z-10 h-7 rounded-md px-4 text-sm font-medium"
+    >
+      <Icons.chevronRight className="size-4 stroke-[3px]" />
+    </button>
+  )
+}
+
+export function AuthEmail() {
+  const { track } = useLogSnag()
+
+  return (
+    <div>
+      <div className="flex justify-center">
+        <form
+          className="w-[95%]"
+          action={async (formData) => {
+            const email = formData.get("email") as string
+            track({
+              event: LogEvents.Waitlist.name,
+              notify: true,
+              icon: LogEvents.Waitlist.icon,
+              channel: LogEvents.Waitlist.channel,
+              description: `${email} joined the waitlist for ${siteConfig.name}`,
+              tags: {
+                email,
+              },
+            })
+          }}
+        >
+          <fieldset className="relative">
+            <Input
+              placeholder="email@example.com"
+              type="email"
+              name="email"
+              id="email"
+              autoComplete="email"
+              aria-label="Email address"
+              required
+            />
+            <SubmitButton />
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  )
+}

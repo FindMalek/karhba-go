@@ -3,7 +3,7 @@ import { getStatus } from "@openstatus/react"
 import { cn } from "@/lib/utils"
 
 export async function StatusWidget() {
-  const res = await getStatus("karhbago")
+  const res = await getStatus("findplate")
 
   const { status } = res
 

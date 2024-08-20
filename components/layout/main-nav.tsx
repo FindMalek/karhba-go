@@ -43,7 +43,7 @@ export function MainNav({ user }: { user: User | Boolean }) {
         ) : (
           <>
             <div className="flex items-center space-x-4">
-              {(user as User).role === "INSTRUCTOR" && (
+              {(user as User).type === "AGENCY" && (
                 <Link href="/course/add-course">
                   <Icons.folderPlus
                     className={cn(
@@ -56,7 +56,7 @@ export function MainNav({ user }: { user: User | Boolean }) {
                   />
                 </Link>
               )}
-              {(user as User).role === "STUDENT" && (
+              {(user as User).type === "CLIENT" && (
                 <>
                   <Link href="/favourite">
                     <Icons.heart

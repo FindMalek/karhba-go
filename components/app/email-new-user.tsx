@@ -27,7 +27,7 @@ export function EmailNewUser({ username }: { username: string }) {
         <Container style={container}>
           <Img
             src={siteConfig.images.logo}
-            width="170"
+            width="50"
             height="50"
             alt={`Logo de ${siteConfig.name}`}
             style={logo}

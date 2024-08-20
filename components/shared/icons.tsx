@@ -10,6 +10,7 @@ import {
   ChevronRight,
   ChevronsUpDown,
   CircleCheck,
+  CircleIcon,
   ClockIcon,
   CopyIcon,
   CreditCard,
@@ -52,7 +53,14 @@ import {
   X,
   ZapIcon,
 } from "lucide-react"
-import { FaDiscord, FaFacebook, FaGithub, FaGoogle } from "react-icons/fa"
+import {
+  FaDiscord,
+  FaFacebook,
+  FaGithub,
+  FaGoogle,
+  FaInstagram,
+  FaTiktok,
+} from "react-icons/fa"
 import { FaXTwitter } from "react-icons/fa6"
 import {
   MdOutlineDescription,
@@ -138,4 +146,7 @@ export const Icons = {
   toggleRight: ToggleRightIcon,
   facebook: FaFacebook,
   google: FaGoogle,
+  circle: CircleIcon,
+  tiktok: FaTiktok,
+  instagram: FaInstagram,
 }

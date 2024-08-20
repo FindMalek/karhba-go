@@ -4,7 +4,7 @@ import { redirect } from "next/navigation"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 
-import { AuthUserEmail } from "@/components/app/auth-user-email"
+import { AuthRegister } from "@/components/app/auth-register"
 import { Icons } from "@/components/shared/icons"
 import { buttonVariants } from "@/components/ui/button"
 
@@ -62,32 +62,24 @@ export default async function RegisterPage() {
 
           <div className="flex flex-col space-y-2 text-center">
             <h1 className="text-2xl font-semibold tracking-tight">
-              Créer un compte
+              Créer Votre Compte {siteConfig.name}
             </h1>
-            <p className="text-muted-foreground text-sm">
-              Créez un compte pour accéder à toutes les fonctionnalités.
+
+            <AuthRegister />
+            <p className="text-secondary-foreground/65 text-xs">
+              En cliquant sur Continuer, vous reconnaissez avoir lu et accepté
+              les{" "}
+              <a href="/post/terms" className="underline">
+                Conditions de Service
+              </a>{" "}
+              et la{" "}
+              <a href="/post/policy" className="underline">
+                {" "}
+                Politique de confidentialité
+              </a>{" "}
+              de {siteConfig.name}.
             </p>
-
-            <AuthUserEmail type="register" />
           </div>
-
-          <p className="text-muted-foreground px-8 text-center text-sm">
-            En continuant, vous acceptez les{" "}
-            <Link
-              href="/post/terms"
-              className="hover:text-primary underline underline-offset-4"
-            >
-              les conditions d&apos;utilisation
-            </Link>{" "}
-            et la{" "}
-            <Link
-              href="/post/privacy"
-              className="hover:text-primary underline underline-offset-4"
-            >
-              politique de confidentialité
-            </Link>
-            .
-          </p>
         </div>
       </div>
     </div>

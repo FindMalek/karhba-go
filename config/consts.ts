@@ -1,8 +1,5 @@
 import type { NavLink, Status } from "@/types"
 
-export const locales = ["en", "fr"] as const
-export const localePrefix = "as-needed"
-
 export const getNotFoundStatus = (t: (key: string) => string): Status[] => [
   {
     name: "<Status Code>",

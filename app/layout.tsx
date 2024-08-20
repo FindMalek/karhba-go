@@ -7,7 +7,6 @@ import { LogSnagProvider } from "@logsnag/next"
 
 import { env } from "@/env.mjs"
 
-import { locales } from "@/config/consts"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 
@@ -90,10 +89,6 @@ export const metadata: Metadata = {
   },
   manifest: `${siteConfig.url}/site.webmanifest`,
   metadataBase: new URL(siteConfig.url),
-}
-
-export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }))
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {

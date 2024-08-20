@@ -25,14 +25,7 @@ import { Label } from "@/components/ui/label"
 
 import { isBanned } from "@/actions/user"
 
-interface AuthUserEmailProps extends React.HTMLAttributes<HTMLDivElement> {
-  type: "login" | "register"
-}
-
-export function AuthUserEmail({
-  type,
-  ...props
-}: AuthUserEmailProps) {
+export function AuthUserEmail() {
   const router = useRouter()
   const [isLoading, setIsLoading] = React.useState<boolean>(false)
   const [isFacebookLoading, setIsFacebookLoading] =
@@ -80,7 +73,7 @@ export function AuthUserEmail({
 
   return (
     <Form {...form}>
-      <div className={"grid gap-6", } {...props}>
+      <div className="grid gap-6">
         <form onSubmit={form.handleSubmit(onSubmit)}>
           <div className="grid gap-2">
             <div className="grid gap-1">
