@@ -1,6 +1,7 @@
 import Image from "next/image"
 import {
   AlertTriangle,
+  AlignJustifyIcon,
   ArrowRight,
   BellIcon,
   BookImageIcon,
@@ -149,4 +150,5 @@ export const Icons = {
   circle: CircleIcon,
   tiktok: FaTiktok,
   instagram: FaInstagram,
+  menu: AlignJustifyIcon,
 }

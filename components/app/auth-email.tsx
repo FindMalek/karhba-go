@@ -1,15 +1,19 @@
 "use client"
 
 import React from "react"
+import { useRouter } from "next/navigation"
 import { useLogSnag } from "@logsnag/next"
 import { signIn } from "next-auth/react"
 import { useFormStatus } from "react-dom"
 
 import { LogEvents } from "@/config/events"
 import { siteConfig } from "@/config/site"
+import { toast } from "@/hooks/use-toast"
 
 import { Icons } from "@/components/shared/icons"
 import { Input } from "@/components/ui/input"
+
+import { isBanned } from "@/actions/user"
 
 function SubmitButton() {
   const { pending } = useFormStatus()
@@ -33,6 +37,7 @@ function SubmitButton() {
 }
 
 export function AuthEmail() {
+  const router = useRouter()
   const { track } = useLogSnag()
 
   return (
@@ -52,6 +57,33 @@ export function AuthEmail() {
                 email,
               },
             })
+
+            try {
+              if (await isBanned(email)) {
+                return toast({
+                  title: "Votre compte a été banni",
+                  variant: "destructive",
+                })
+              }
+
+              await signIn("email", {
+                email: email.toLowerCase(),
+                redirect: false,
+                callbackUrl: "/onboarding",
+              })
+
+              router.push("/otp-code/" + email.toLowerCase())
+              return toast({
+                title:
+                  "Un code de vérification a été envoyé à votre adresse e-mail",
+                description: "Veuillez vérifier votre boîte de réception",
+              })
+            } catch (error) {
+              return toast({
+                title: "Erreur",
+                variant: "destructive",
+              })
+            }
           }}
         >
           <fieldset className="relative">

@@ -41,6 +41,7 @@ export function AuthUserEmail() {
 
   async function onSubmit(data: z.infer<typeof userAuthSchema>) {
     setIsLoading(true)
+    console.log(data)
 
     try {
       if (await isBanned(data.email)) {
