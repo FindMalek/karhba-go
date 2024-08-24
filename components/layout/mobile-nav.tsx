@@ -3,59 +3,14 @@
 import * as React from "react"
 import Link, { LinkProps } from "next/link"
 import { useRouter } from "next/navigation"
+import { User } from "@prisma/client"
 
 import { navigationLinks } from "@/config/consts"
-import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 
 import { Icons } from "@/components/shared/icons"
-import { Button } from "@/components/ui/button"
-import { ScrollArea } from "@/components/ui/scroll-area"
+import { Button, buttonVariants } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-
-export function MobileNav() {
-  const [open, setOpen] = React.useState(false)
-
-  return (
-    <Sheet open={open} onOpenChange={setOpen}>
-      <SheetTrigger asChild>
-        <Button
-          variant="ghost"
-          className="mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
-        >
-          <Icons.menu className="size-6" />
-          <span className="sr-only">Toggle Menu</span>
-        </Button>
-      </SheetTrigger>
-      <SheetContent side="top" className="h-screen pr-0">
-        <MobileLink
-          href="/"
-          className="flex items-center"
-          onOpenChange={setOpen}
-        >
-          <Icons.logo className="mr-2 size-4" />
-          <span className="font-bold">{siteConfig.name}</span>
-        </MobileLink>
-        <ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
-          <div className="flex flex-col space-y-3">
-            {navigationLinks.map(
-              (item) =>
-                item.path && (
-                  <MobileLink
-                    key={item.path}
-                    href={item.path}
-                    onOpenChange={setOpen}
-                  >
-                    {item.title}
-                  </MobileLink>
-                )
-            )}
-          </div>
-        </ScrollArea>
-      </SheetContent>
-    </Sheet>
-  )
-}
 
 interface MobileLinkProps extends LinkProps {
   onOpenChange?: (open: boolean) => void
@@ -81,5 +36,35 @@ function MobileLink({
     >
       {children}
     </Link>
+  )
+}
+
+export function MobileNav({ user }: { user: User | Boolean }) {
+  return (
+    <div className="lg:hidden">
+      <Sheet>
+        <SheetTrigger asChild>
+          <Button variant="ghost" size="icon" aria-label="Menu">
+            <Icons.menu className="size-6" />
+          </Button>
+        </SheetTrigger>
+        <SheetContent
+          className="min-h-screen data-[state=closed]:duration-0 data-[state=open]:duration-0"
+          side="top"
+        >
+          <div className="mt-12 flow-root space-y-3">
+            <Link href="/register" className={cn("w-full", buttonVariants())}>
+              Inscription
+            </Link>
+            <Link
+              href="/login"
+              className={cn("w-full", buttonVariants({ variant: "outline" }))}
+            >
+              Connexion
+            </Link>
+          </div>
+        </SheetContent>
+      </Sheet>
+    </div>
   )
 }

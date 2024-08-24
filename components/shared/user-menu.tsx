@@ -1,5 +1,5 @@
-import { User } from "@prisma/client"
 import Link from "next/link"
+import { User } from "@prisma/client"
 
 import { RoleBadge } from "@/components/shared/role-badge"
 import { SignoutButton } from "@/components/shared/sign-out"
@@ -9,8 +9,8 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuSeparator,
   DropdownMenuLabel,
+  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
