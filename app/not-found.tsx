@@ -1,5 +1,4 @@
 import { NotFoundStatuses } from "@/components/layout/not-found-statuses"
-import { StatusWidget } from "@/components/shared/status-widget"
 
 export default function NotFound() {
   return (
@@ -13,10 +12,6 @@ export default function NotFound() {
           <span className="loading-ellipsis animate-pulse text-red-600 dark:text-red-400">
             Données en cours de chargement...
           </span>
-
-          <div className="ml-auto flex space-x-2">
-            <StatusWidget />
-          </div>
         </div>
 
         <NotFoundStatuses />

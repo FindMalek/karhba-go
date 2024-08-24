@@ -15,6 +15,12 @@ const nextConfig = {
         pathname: "/**",
         hostname: "github.com",
       },
+      {
+        protocol: "https",
+        port: "",
+        pathname: "/**",
+        hostname: "karhba-go.findmalek.com",
+      },
     ],
     domains: ["localhost"],
   },

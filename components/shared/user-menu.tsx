@@ -1,13 +1,15 @@
 import { User } from "@prisma/client"
+import Link from "next/link"
 
 import { RoleBadge } from "@/components/shared/role-badge"
 import { SignoutButton } from "@/components/shared/sign-out"
-import { UserDropdown } from "@/components/shared/user-dropdown"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
   DropdownMenuLabel,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
@@ -26,7 +28,13 @@ export function UserMenu({
         <DropdownMenuLabel>{user.name}</DropdownMenuLabel>
         <p className="text-muted-foreground px-2 text-sm">{user.email}</p>
         <RoleBadge role={user.type} />
-        <UserDropdown />
+        <DropdownMenuSeparator />
+        <DropdownMenuItem>
+          <Link href="/account" className="w-full">
+            Profile
+          </Link>
+        </DropdownMenuItem>
+        <DropdownMenuSeparator />
         <SignoutButton />
       </DropdownMenuContent>
     </DropdownMenu>
@@ -49,7 +57,13 @@ export function UserMenuIconDropdown({ user }: { user: User }) {
         <DropdownMenuLabel>{user.name}</DropdownMenuLabel>
         <p className="text-muted-foreground px-2 text-sm">{user.email}</p>
         <RoleBadge role={user.type} />
-        <UserDropdown />
+        <DropdownMenuSeparator />
+        <DropdownMenuItem>
+          <Link href="/account" className="w-full">
+            Profile
+          </Link>
+        </DropdownMenuItem>
+        <DropdownMenuSeparator />
         <SignoutButton />
       </DropdownMenuContent>
     </DropdownMenu>
