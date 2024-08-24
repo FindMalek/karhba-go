@@ -65,7 +65,7 @@ export function AuthRegister() {
                 </AccordionTrigger>
                 <AccordionContent className="mt-4">
                   <div className="flex flex-col space-y-4">
-                    <AuthEmail data={details} />
+                    <AuthEmail /* data={details} */ />
                     <Separator />
                     <AuthRegisterProviders />
                   </div>

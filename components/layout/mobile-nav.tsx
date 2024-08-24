@@ -1,43 +1,21 @@
-"use client"
 
 import * as React from "react"
-import Link, { LinkProps } from "next/link"
-import { useRouter } from "next/navigation"
+import Link from "next/link"
+import { navMobileLinks } from "@/data/navigations"
 import { User } from "@prisma/client"
 
-import { navigationLinks } from "@/config/consts"
 import { cn } from "@/lib/utils"
 
 import { Icons } from "@/components/shared/icons"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 import { Button, buttonVariants } from "@/components/ui/button"
+import { Separator } from "@/components/ui/separator"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-
-interface MobileLinkProps extends LinkProps {
-  onOpenChange?: (open: boolean) => void
-  children: React.ReactNode
-  className?: string
-}
-
-function MobileLink({
-  href,
-  onOpenChange,
-  className,
-  children,
-}: MobileLinkProps) {
-  const router = useRouter()
-  return (
-    <Link
-      href={href}
-      onClick={() => {
-        router.push(href.toString())
-        onOpenChange?.(false)
-      }}
-      className={cn(className)}
-    >
-      {children}
-    </Link>
-  )
-}
 
 export function MobileNav({ user }: { user: User | Boolean }) {
   return (
@@ -63,6 +41,36 @@ export function MobileNav({ user }: { user: User | Boolean }) {
               Connexion
             </Link>
           </div>
+          <Accordion type="single" collapsible className="w-full pt-4">
+            {navMobileLinks.map((item, index) => (
+              <AccordionItem
+                key={index}
+                value={`item-${index}`}
+                className="-px-2 -mx-2 border-b-0"
+              >
+                <AccordionTrigger className="transition-color bg-background text-muted-foreground hover:bg-muted rounded-md px-4 text-lg font-semibold hover:no-underline">
+                  {item.title}
+                </AccordionTrigger>
+                <AccordionContent>
+                  {item.links.map((link, linkIndex) => (
+                    <Link
+                      href={link.href}
+                      key={linkIndex}
+                      className="transition-color bg-background text-muted-foreground hover:bg-muted group flex min-w-full items-center space-x-2 rounded-md p-4 text-lg font-semibold hover:no-underline"
+                    >
+                      <link.icon className="group-hover:text-primary size-6 group-hover:transition-all group-hover:duration-300" />
+                      <span className="text-muted-foreground group-hover:text-secondary-foreground group-hover:transition-all group-hover:duration-300">
+                        {link.name}
+                      </span>
+                    </Link>
+                  ))}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+          <Separator className="my-5" />
+          hello
+          <Separator className="my-5" />
         </SheetContent>
       </Sheet>
     </div>
