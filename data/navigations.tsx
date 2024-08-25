@@ -67,11 +67,19 @@ export const navMobileLinks: accordianItemType[] = [
         name: "Offre Week-end",
         icon: Icons.beach,
         href: "/promotions/weekend",
+        active: true,
+      },
+      {
+        name: "Bons Plans",
+        icon: Icons.handshake,
+        href: "/promotions/great-deals",
+        active: true,
       },
       {
         name: "Offre Réveillon",
         icon: Icons.party,
         href: "/promotions/new-year",
+        hide: true,
       },
       {
         name: "Offres Saisonnales",

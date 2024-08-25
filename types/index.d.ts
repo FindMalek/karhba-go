@@ -93,5 +93,5 @@ export type userNavLink = {
   icon: (typeof Icons)[keyof typeof Icons]
   href: string
   hide?: boolean
-  new?: boolean
+  active?: boolean
 }

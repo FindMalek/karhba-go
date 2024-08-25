@@ -16,6 +16,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import { Badge } from "@/components/ui/badge"
 import { Button, buttonVariants } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import {
@@ -45,12 +46,12 @@ export function MobileNav({ user }: { user: User | Boolean }) {
           close={false}
         >
           <div className="bg-background sticky top-0 z-50 p-4">
-            <div className="flex shrink-0 items-center">
+            <Link href="/" className="flex shrink-0 items-center">
               <Icons.logo className="h-8 w-auto" />
               <span className="text-secondary-foreground ml-2 mt-2 font-bold">
                 {siteConfig.name}
               </span>
-            </div>
+            </Link>
             <SheetClose className="absolute right-0 top-0 p-4">
               <Button variant="ghost" size="icon" aria-label="Close">
                 <Icons.close className="size-6" />
@@ -124,32 +125,65 @@ export function MobileNav({ user }: { user: User | Boolean }) {
             )}
 
             <Accordion type="single" collapsible className="w-full pt-4">
-              {navMobileLinks.map((item, index) => (
-                <AccordionItem
-                  key={index}
-                  value={`item-${index}`}
-                  className="-px-2 -mx-2 border-b-0"
-                >
-                  <AccordionTrigger className="transition-color bg-background text-muted-foreground hover:bg-muted rounded-md px-4 text-base font-semibold hover:no-underline">
-                    {item.title}
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    {item.links.map((link, linkIndex) => (
-                      <Link
-                        href={link.href}
-                        key={linkIndex}
-                        className="transition-color bg-background text-muted-foreground hover:bg-muted group flex min-w-full items-center space-x-2 rounded-md p-4 text-base font-semibold hover:no-underline"
-                      >
-                        <link.icon className="group-hover:text-primary size-5 group-hover:transition-all group-hover:duration-300" />
-                        <span className="text-muted-foreground group-hover:text-secondary-foreground group-hover:transition-all group-hover:duration-300">
-                          {link.name}
-                        </span>
-                      </Link>
-                    ))}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
+              {navMobileLinks
+                .filter((item) => !item.href)
+                .map((item, index) => (
+                  <AccordionItem
+                    key={index}
+                    value={`item-${index}`}
+                    className="-px-2 -mx-2 border-b-0"
+                  >
+                    <AccordionTrigger className="transition-color bg-background text-muted-foreground hover:bg-muted rounded-md px-4 text-base font-semibold hover:no-underline">
+                      {item.title}
+                    </AccordionTrigger>
+                    <AccordionContent>
+                      {item.links
+                        .filter((link) => !link.hide)
+                        .map((link, linkIndex) => (
+                          <Link
+                            href={link.href}
+                            key={linkIndex}
+                            className="transition-color bg-background text-muted-foreground hover:bg-muted group flex min-w-full items-center justify-between space-x-2 rounded-md p-4 text-base font-semibold hover:no-underline"
+                          >
+                            <div className="flex items-center space-x-2">
+                              <link.icon className="group-hover:text-primary size-5 group-hover:transition-all group-hover:duration-300" />
+                              <span className="text-muted-foreground group-hover:text-secondary-foreground group-hover:transition-all group-hover:duration-300">
+                                {link.name}
+                              </span>
+                            </div>
+                            {link.active && (
+                              <span className="relative flex size-2">
+                                <span
+                                  className={
+                                    "bg-primary absolute inline-flex size-full animate-ping rounded-full opacity-50"
+                                  }
+                                />
+                                <span
+                                  className={
+                                    "bg-primary relative inline-flex size-2 rounded-full"
+                                  }
+                                />
+                              </span>
+                            )}
+                          </Link>
+                        ))}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
             </Accordion>
+
+            <div>
+              {navMobileLinks
+                .filter((item) => item.href)
+                .map((item, index) => (
+                  <Link
+                    href={item.href!}
+                    className="-px-2 transition-color bg-background text-muted-foreground hover:bg-muted -mx-2 flex flex-1  items-center justify-between rounded-md p-4 text-base font-semibold transition-all hover:no-underline"
+                  >
+                    {item.title}
+                  </Link>
+                ))}
+            </div>
 
             <div className="mt-3 flow-root space-y-6 px-2">
               <Separator className="my-5" />

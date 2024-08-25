@@ -1,9 +1,9 @@
 import React from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { User } from "@prisma/client"
 
 import { siteConfig } from "@/config/site"
-import { cn } from "@/lib/utils"
 
 import { MobileNav } from "@/components/layout/mobile-nav"
 import {
@@ -19,14 +19,14 @@ export function SiteHeader({ user }: { user: User | Boolean }) {
   return (
     <header className="bg-background sticky top-0 z-50 mx-auto max-w-7xl border-b px-4 sm:px-6 lg:px-8">
       <div className="flex h-16 items-center justify-between">
-        <div className="relative flex px-2 lg:px-0">
+        <Link href="/" className="relative flex px-2 lg:px-0">
           <div className="flex shrink-0 items-center">
             <Icons.logo className="h-8 w-auto" />
             <span className="text-secondary-foreground ml-2 mt-2 font-bold">
               {siteConfig.name}
             </span>
           </div>
-        </div>
+        </Link>
 
         <div className="hidden w-full sm:max-w-xs lg:block">
           <div className="relative">

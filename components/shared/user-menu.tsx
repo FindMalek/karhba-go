@@ -42,12 +42,7 @@ export function UserMenu({
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <form action={handleSignOut}>
-          <DropdownMenuItem
-            className="text-destructive hover:bg-destructive/30 hover:text-destructive-foreground cursor-pointer"
-            onClick={() => {
-              signOut()
-            }}
-          >
+          <DropdownMenuItem className="text-destructive hover:bg-destructive/30 hover:text-destructive-foreground cursor-pointer">
             Se déconnecter
           </DropdownMenuItem>
         </form>
@@ -80,12 +75,7 @@ export function UserMenuIconDropdown({ user }: { user: User }) {
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <form action={handleSignOut}>
-          <DropdownMenuItem
-            className="text-destructive hover:bg-destructive/30 hover:text-destructive-foreground cursor-pointer"
-            onClick={() => {
-              signOut()
-            }}
-          >
+          <DropdownMenuItem className="text-destructive hover:bg-destructive/30 hover:text-destructive-foreground cursor-pointer">
             Se déconnecter
           </DropdownMenuItem>
         </form>
