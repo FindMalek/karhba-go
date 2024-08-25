@@ -1,5 +1,6 @@
 import Image from "next/image"
 import {
+  AlbumIcon,
   AlertTriangle,
   AlignJustifyIcon,
   ArrowRight,
@@ -182,5 +183,6 @@ export const Icons = {
   leaf: LeafIcon,
   handshake: HandshakeIcon,
   questionCircle: MessageCircleQuestionIcon,
-  scroll: ScrollIcon
+  scroll: ScrollIcon,
+  album: AlbumIcon,
 }

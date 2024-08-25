@@ -84,6 +84,7 @@ export type NavLink = {
 
 export type accordianItemType = {
   title: string
+  href?: string
   links: userNavLink[]
 }
 
