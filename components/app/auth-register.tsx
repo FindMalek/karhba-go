@@ -8,6 +8,8 @@ import { signIn } from "next-auth/react"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 
+import { AuthDetailsType } from "@/types/auth"
+
 import { siteConfig } from "@/config/site"
 import { authRegisterSchema } from "@/config/validation"
 import { cn } from "@/lib/utils"
@@ -38,13 +40,7 @@ import { Separator } from "@/components/ui/separator"
 
 export function AuthRegister() {
   const router = useRouter()
-  const [details, setDetails] = React.useState<{
-    type: UserType | null
-    name: string | null
-  }>({
-    type: null,
-    name: null,
-  })
+  const [details, setDetails] = React.useState<AuthDetailsType>()
 
   const form = useForm<z.infer<typeof authRegisterSchema>>({
     resolver: zodResolver(authRegisterSchema),
@@ -58,7 +54,7 @@ export function AuthRegister() {
 
   return (
     <Form {...form}>
-      {details.type ? (
+      {details ? (
         <div className="flex w-full flex-col gap-4 space-y-8 pt-4">
           <div className="pointer-events-auto my-6 flex flex-col">
             <AuthPhoneNumber />
@@ -69,7 +65,7 @@ export function AuthRegister() {
                 </AccordionTrigger>
                 <AccordionContent className="mt-4">
                   <div className="flex flex-col space-y-4">
-                    <AuthEmail />
+                    <AuthEmail /* data={details} */ />
                     <Separator />
                     <AuthRegisterProviders />
                   </div>

@@ -1,4 +1,4 @@
-import { User } from "@prisma/client"
+import { User, UserType } from "@prisma/client"
 import NextAuth from "next-auth"
 import { JWT } from "next-auth/jwt"
 
@@ -31,4 +31,9 @@ export type TokenType = {
   expires: string
   passCode: string
   verificationUrl: string
+}
+
+export type AuthDetailsType = {
+  type: UserType
+  name: string
 }

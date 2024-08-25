@@ -81,3 +81,17 @@ export type NavLink = {
   title: string
   path: string
 }
+
+export type accordianItemType = {
+  title: string
+  href?: string
+  links: userNavLink[]
+}
+
+export type userNavLink = {
+  name: string
+  icon: (typeof Icons)[keyof typeof Icons]
+  href: string
+  hide?: boolean
+  active?: boolean
+}

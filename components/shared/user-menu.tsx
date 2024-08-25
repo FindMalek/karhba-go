@@ -1,16 +1,24 @@
+import Link from "next/link"
 import { User } from "@prisma/client"
 
+import { signOut } from "@/lib/auth"
+
 import { RoleBadge } from "@/components/shared/role-badge"
-import { SignoutButton } from "@/components/shared/sign-out"
-import { UserDropdown } from "@/components/shared/user-dropdown"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuItem,
   DropdownMenuLabel,
+  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+
+async function handleSignOut() {
+  "use server"
+  await signOut()
+}
 
 export function UserMenu({
   user,
@@ -26,8 +34,18 @@ export function UserMenu({
         <DropdownMenuLabel>{user.name}</DropdownMenuLabel>
         <p className="text-muted-foreground px-2 text-sm">{user.email}</p>
         <RoleBadge role={user.type} />
-        <UserDropdown />
-        <SignoutButton />
+        <DropdownMenuSeparator />
+        <DropdownMenuItem>
+          <Link href="/account" className="w-full">
+            Profile
+          </Link>
+        </DropdownMenuItem>
+        <DropdownMenuSeparator />
+        <form action={handleSignOut}>
+          <DropdownMenuItem className="text-destructive hover:bg-destructive/30 hover:text-destructive-foreground cursor-pointer">
+            Se déconnecter
+          </DropdownMenuItem>
+        </form>
       </DropdownMenuContent>
     </DropdownMenu>
   )
@@ -49,9 +67,34 @@ export function UserMenuIconDropdown({ user }: { user: User }) {
         <DropdownMenuLabel>{user.name}</DropdownMenuLabel>
         <p className="text-muted-foreground px-2 text-sm">{user.email}</p>
         <RoleBadge role={user.type} />
-        <UserDropdown />
-        <SignoutButton />
+        <DropdownMenuSeparator />
+        <DropdownMenuItem>
+          <Link href="/account" className="w-full">
+            Profile
+          </Link>
+        </DropdownMenuItem>
+        <DropdownMenuSeparator />
+        <form action={handleSignOut}>
+          <DropdownMenuItem className="text-destructive hover:bg-destructive/30 hover:text-destructive-foreground cursor-pointer">
+            Se déconnecter
+          </DropdownMenuItem>
+        </form>
       </DropdownMenuContent>
     </DropdownMenu>
+  )
+}
+
+export function UserMenuDropdown({ user }: { user: User }) {
+  return (
+    <div className="flex items-center justify-between px-2 pb-4">
+      <div>
+        <p className="text-base font-medium leading-none">{user.name}</p>
+        <p className="text-muted-foreground text-sm font-light">{user.email}</p>
+      </div>
+      <Avatar className="size-5">
+        <AvatarImage src={user.image} />
+        <AvatarFallback>{user.email[0]}</AvatarFallback>
+      </Avatar>
+    </div>
   )
 }
