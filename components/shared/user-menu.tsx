@@ -1,8 +1,9 @@
 import Link from "next/link"
 import { User } from "@prisma/client"
 
+import { signOut } from "@/lib/auth"
+
 import { RoleBadge } from "@/components/shared/role-badge"
-import { SignoutButton } from "@/components/shared/sign-out"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import {
@@ -13,6 +14,11 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+
+async function handleSignOut() {
+  "use server"
+  await signOut()
+}
 
 export function UserMenu({
   user,
@@ -35,7 +41,16 @@ export function UserMenu({
           </Link>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
-        <SignoutButton />
+        <form action={handleSignOut}>
+          <DropdownMenuItem
+            className="text-destructive hover:bg-destructive/30 hover:text-destructive-foreground cursor-pointer"
+            onClick={() => {
+              signOut()
+            }}
+          >
+            Se déconnecter
+          </DropdownMenuItem>
+        </form>
       </DropdownMenuContent>
     </DropdownMenu>
   )
@@ -64,7 +79,16 @@ export function UserMenuIconDropdown({ user }: { user: User }) {
           </Link>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
-        <SignoutButton />
+        <form action={handleSignOut}>
+          <DropdownMenuItem
+            className="text-destructive hover:bg-destructive/30 hover:text-destructive-foreground cursor-pointer"
+            onClick={() => {
+              signOut()
+            }}
+          >
+            Se déconnecter
+          </DropdownMenuItem>
+        </form>
       </DropdownMenuContent>
     </DropdownMenu>
   )
