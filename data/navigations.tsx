@@ -88,31 +88,26 @@ export const navMobileLinks: accordianItemType[] = [
   {
     title: "Support",
     links: [
-      /*       {
+        {
         name: "FAQ",
-        icon: Icons.questionMark,
+        icon: Icons.questionCircle,
         href: "/support/faq",
       },
       {
         name: "Contactez-Nous",
-        icon: Icons.telephone,
+        icon: Icons.phone,
         href: "/support/contact",
-      },
-      {
-        name: "Assistance 24/7",
-        icon: Icons.clock,
-        href: "/support/assistance",
       },
       {
         name: "Politique de Confidentialité",
         icon: Icons.lock,
-        href: "/support/privacy-policy",
+        href: "/post/privacy",
       },
       {
         name: "Conditions Générales",
         icon: Icons.scroll,
-        href: "/support/terms-conditions",
-      }, */
+        href: "/post/terms",
+      }, 
     ],
   },
   {

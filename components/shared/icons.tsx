@@ -38,6 +38,7 @@ import {
   LucideIcon,
   MailIcon,
   MapIcon,
+  MessageCircleQuestionIcon,
   Monitor,
   Moon,
   MoreVertical,
@@ -48,6 +49,7 @@ import {
   Pizza,
   Plus,
   PuzzleIcon,
+  ScrollIcon,
   Search,
   Settings,
   ShieldIcon,
@@ -179,4 +181,6 @@ export const Icons = {
   party: PartyPopperIcon,
   leaf: LeafIcon,
   handshake: HandshakeIcon,
+  questionCircle: MessageCircleQuestionIcon,
+  scroll: ScrollIcon
 }
