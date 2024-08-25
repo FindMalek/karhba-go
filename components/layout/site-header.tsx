@@ -17,12 +17,12 @@ import { Input } from "@/components/ui/input"
 
 export function SiteHeader({ user }: { user: User | Boolean }) {
   return (
-    <header className="border-b-3 sticky top-0 z-50 border-secondary-foreground/40 bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 w-full backdrop-blur">
+    <header className="border-b-3 border-secondary-foreground/40 bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 w-full backdrop-blur">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
         <Link href="/" className="relative flex px-2 lg:px-0">
           <div className="flex shrink-0 items-center">
             <Icons.logo className="h-8 w-auto" />
-            <span className="ml-2 mt-2 font-bold text-secondary-foreground">
+            <span className="text-secondary-foreground ml-2 mt-2 font-bold">
               {siteConfig.name}
             </span>
           </div>
@@ -30,7 +30,7 @@ export function SiteHeader({ user }: { user: User | Boolean }) {
 
         <div className="hidden w-full sm:max-w-xs lg:block">
           <div className="relative">
-            <Icons.search className="absolute left-2 top-2.5 size-4 text-muted-foreground" />
+            <Icons.search className="text-muted-foreground absolute left-2 top-2.5 size-4" />
             <Input
               type="search"
               placeholder="Recherche..."
@@ -50,7 +50,7 @@ export function SiteHeader({ user }: { user: User | Boolean }) {
                 className="mr-4"
                 aria-label="Notifications"
               >
-                <Icons.bell className="size-6 text-muted-foreground" />
+                <Icons.bell className="text-muted-foreground size-6" />
               </Button>
               <UserMenu user={user as User}>
                 <Button
