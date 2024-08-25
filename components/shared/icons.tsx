@@ -26,10 +26,12 @@ import {
   FlagIcon,
   FolderPlus,
   GlobeIcon,
+  HandshakeIcon,
   HeartIcon,
   HelpCircle,
   Image as ImageIcon,
   Laptop,
+  LeafIcon,
   LineChartIcon,
   Loader2,
   LockIcon,
@@ -40,6 +42,7 @@ import {
   Moon,
   MoreVertical,
   PanelsTopLeft,
+  PartyPopperIcon,
   PencilIcon,
   PhoneIcon,
   Pizza,
@@ -69,6 +72,7 @@ import {
   FaGoogle,
   FaInstagram,
   FaTiktok,
+  FaUmbrellaBeach,
 } from "react-icons/fa"
 import { FaXTwitter } from "react-icons/fa6"
 import { LiaUserTieSolid } from "react-icons/lia"
@@ -171,4 +175,8 @@ export const Icons = {
   family: MdFamilyRestroom,
   bellhop: ConciergeBell,
   dashboard: PanelsTopLeft,
+  beach: FaUmbrellaBeach,
+  party: PartyPopperIcon,
+  leaf: LeafIcon,
+  handshake: HandshakeIcon,
 }

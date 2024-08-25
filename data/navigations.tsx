@@ -64,80 +64,30 @@ export const navMobileLinks: accordianItemType[] = [
     title: "Promotions",
     links: [
       {
-        name: "Pour les Entreprises",
-        icon: Icons.entreprise,
-        href: "/solutions/business",
-      },
-      {
-        name: "Pour les Touristes",
-        icon: Icons.map,
-        href: "/solutions/tourists",
-      },
-      {
-        name: "Pour les Événements",
-        icon: Icons.ticket,
-        href: "/solutions/events",
-      },
-      {
-        name: "Pour les Familles",
-        icon: Icons.family,
-        href: "/solutions/families",
-      },
-      {
-        name: "Location avec Chauffeur",
-        icon: Icons.bellhop,
-        href: "/solutions/with-driver",
-      },
-      /*       {
         name: "Offre Week-end",
-        icon: Icons.beachUmbrella,
+        icon: Icons.beach,
         href: "/promotions/weekend",
       },
       {
         name: "Offre Réveillon",
-        icon: Icons.fireworks,
+        icon: Icons.party,
         href: "/promotions/new-year",
       },
       {
         name: "Offres Saisonnales",
-        icon: Icons.fallingLeaves,
+        icon: Icons.leaf,
         href: "/promotions/seasonal",
       },
       {
         name: "Bons Plans",
-        icon: Icons.moneyWings,
+        icon: Icons.handshake,
         href: "/promotions/great-deals",
-      }, */
+      },
     ],
   },
   {
     title: "Support",
     links: [
-      {
-        name: "Pour les Entreprises",
-        icon: Icons.entreprise,
-        href: "/solutions/business",
-      },
-      {
-        name: "Pour les Touristes",
-        icon: Icons.map,
-        href: "/solutions/tourists",
-      },
-      {
-        name: "Pour les Événements",
-        icon: Icons.ticket,
-        href: "/solutions/events",
-      },
-      {
-        name: "Pour les Familles",
-        icon: Icons.family,
-        href: "/solutions/families",
-      },
-      {
-        name: "Location avec Chauffeur",
-        icon: Icons.bellhop,
-        href: "/solutions/with-driver",
-      },
       /*       {
         name: "FAQ",
         icon: Icons.questionMark,
@@ -168,31 +118,6 @@ export const navMobileLinks: accordianItemType[] = [
   {
     title: "À Propos",
     links: [
-      {
-        name: "Pour les Entreprises",
-        icon: Icons.entreprise,
-        href: "/solutions/business",
-      },
-      {
-        name: "Pour les Touristes",
-        icon: Icons.map,
-        href: "/solutions/tourists",
-      },
-      {
-        name: "Pour les Événements",
-        icon: Icons.ticket,
-        href: "/solutions/events",
-      },
-      {
-        name: "Pour les Familles",
-        icon: Icons.family,
-        href: "/solutions/families",
-      },
-      {
-        name: "Location avec Chauffeur",
-        icon: Icons.bellhop,
-        href: "/solutions/with-driver",
-      },
       /*       {
         name: "Notre Histoire",
         icon: Icons.book,
