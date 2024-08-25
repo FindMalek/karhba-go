@@ -1,4 +1,4 @@
-import { accordianItemType } from "types"
+import { accordianItemType, userNavLink } from "types"
 
 import { Icons } from "@/components/shared/icons"
 
@@ -214,5 +214,18 @@ export const navMobileLinks: accordianItemType[] = [
         href: "/about/blog",
       }, */
     ],
+  },
+]
+
+export const navUserLinks: userNavLink[] = [
+  {
+    name: "Tableau de bord",
+    icon: Icons.dashboard,
+    href: "/settings",
+  },
+  {
+    name: "Profile",
+    icon: Icons.user,
+    href: "/account",
   },
 ]

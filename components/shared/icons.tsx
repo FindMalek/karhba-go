@@ -39,6 +39,7 @@ import {
   Monitor,
   Moon,
   MoreVertical,
+  PanelsTopLeft,
   PencilIcon,
   PhoneIcon,
   Pizza,
@@ -169,4 +170,5 @@ export const Icons = {
   ticket: TicketIcon,
   family: MdFamilyRestroom,
   bellhop: ConciergeBell,
+  dashboard: PanelsTopLeft,
 }

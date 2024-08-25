@@ -1,13 +1,15 @@
 import * as React from "react"
 import Link from "next/link"
-import { navMobileLinks } from "@/data/navigations"
+import { navMobileLinks, navUserLinks } from "@/data/navigations"
 import { User } from "@prisma/client"
 
 import { siteConfig } from "@/config/site"
+import { signOut } from "@/lib/auth"
 import { cn } from "@/lib/utils"
 
 import { ThemeSwitch } from "@/components/layout/theme-switch"
 import { Icons } from "@/components/shared/icons"
+import { UserMenuDropdown } from "@/components/shared/user-menu"
 import {
   Accordion,
   AccordionContent,
@@ -24,6 +26,11 @@ import {
 } from "@/components/ui/sheet"
 
 export function MobileNav({ user }: { user: User | Boolean }) {
+  async function handleSignOut() {
+    "use server"
+    await signOut()
+  }
+
   return (
     <div className="lg:hidden">
       <Sheet>
@@ -50,16 +57,71 @@ export function MobileNav({ user }: { user: User | Boolean }) {
               </Button>
             </SheetClose>
           </div>
-          <div className="mt-8 flow-root space-y-3 px-2">
-            <Link href="/register" className={cn("w-full", buttonVariants())}>
-              Inscription
-            </Link>
-            <Link
-              href="/login"
-              className={cn("w-full", buttonVariants({ variant: "outline" }))}
-            >
-              Connexion
-            </Link>
+          <div className="mt-8 flow-root px-2">
+            {(user as User) ? (
+              <div>
+                <div className="space-y-3 pb-6">
+                  <Link
+                    href="/upgrade"
+                    className={cn("w-full", buttonVariants())}
+                  >
+                    Inscription
+                  </Link>
+                  <Link
+                    href="/support"
+                    className={cn(
+                      "w-full",
+                      buttonVariants({ variant: "outline" })
+                    )}
+                  >
+                    Support
+                  </Link>
+                </div>
+                <UserMenuDropdown user={user as User} />
+                {navUserLinks.map((item, index) => (
+                  <Link
+                    href={item.href}
+                    key={index}
+                    className="transition-color bg-background text-muted-foreground hover:bg-muted group flex min-w-full items-center justify-between rounded-md p-2 py-4 text-base font-semibold hover:no-underline"
+                  >
+                    <span className="text-muted-foreground group-hover:text-secondary-foreground group-hover:transition-all group-hover:duration-300">
+                      {item.name}
+                    </span>
+                    <item.icon className="group-hover:text-primary size-5 group-hover:transition-all group-hover:duration-300" />
+                  </Link>
+                ))}
+                <form action={handleSignOut}>
+                  <Button
+                    type="submit"
+                    className="transition-color bg-background text-muted-foreground hover:bg-muted group flex min-w-full items-center justify-between rounded-md p-2 py-4 text-base font-semibold hover:no-underline"
+                  >
+                    <span className="text-muted-foreground group-hover:text-secondary-foreground group-hover:transition-all group-hover:duration-300">
+                      Déconnexion
+                    </span>
+                    <Icons.lock className="group-hover:text-primary size-5 group-hover:transition-all group-hover:duration-300" />
+                  </Button>
+                </form>
+                <Separator className="my-3" />
+              </div>
+            ) : (
+              <div className="space-y-3">
+                <Link
+                  href="/register"
+                  className={cn("w-full", buttonVariants())}
+                >
+                  Inscription
+                </Link>
+                <Link
+                  href="/login"
+                  className={cn(
+                    "w-full",
+                    buttonVariants({ variant: "outline" })
+                  )}
+                >
+                  Connexion
+                </Link>
+              </div>
+            )}
 
             <Accordion type="single" collapsible className="w-full pt-4">
               {navMobileLinks.map((item, index) => (
@@ -91,7 +153,7 @@ export function MobileNav({ user }: { user: User | Boolean }) {
 
             <div className="mt-3 flow-root space-y-6 px-2">
               <Separator className="my-5" />
-              <div className="flex items-center justify-between px-4">
+              <div className="flex items-center justify-between">
                 <span className="transition-color text-muted-foreground hover:text-secondary-foreground text-base font-semibold duration-300">
                   Theme
                 </span>

@@ -69,3 +69,18 @@ export function UserMenuIconDropdown({ user }: { user: User }) {
     </DropdownMenu>
   )
 }
+
+export function UserMenuDropdown({ user }: { user: User }) {
+  return (
+    <div className="flex items-center justify-between px-2 pb-4">
+      <div>
+        <p className="text-base font-medium leading-none">{user.name}</p>
+        <p className="text-muted-foreground text-sm font-light">{user.email}</p>
+      </div>
+      <Avatar className="size-5">
+        <AvatarImage src={user.image} />
+        <AvatarFallback>{user.email[0]}</AvatarFallback>
+      </Avatar>
+    </div>
+  )
+}
